@@ -212,31 +212,39 @@
   .pie-detail-desc{font-size:0.93rem;font-weight:300;color:var(--t);line-height:1.75}
   .pie-detail--active{border-color:rgba(74,124,111,0.3);box-shadow:0 8px 36px rgba(74,124,111,0.16)}
   .pie-detail-body{position:relative;min-height:190px}
-  .pie-detail-slot{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .28s ease}
-  .pie-detail-slot.is-visible{opacity:1;position:relative;pointer-events:auto}
-  .pie-g{cursor:pointer;outline:none;transform-box:view-box;transform-origin:250px 250px;transition:opacity .28s ease}
+  /* Detail card: fade + traslazione 250ms */
+  .pie-detail-slot{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 250ms ease-out,transform 250ms ease-out}
+  .pie-detail-slot.is-visible{opacity:1;position:relative;pointer-events:auto;transform:translateY(0)}
+  /* Spicchi: animazione elegante click + hover */
+  .pie-g{cursor:pointer;outline:none;transform-box:view-box;transform-origin:250px 250px;transition:opacity 300ms cubic-bezier(0.4,0,0.2,1)}
   .pie-g path{
     cursor:pointer;
     pointer-events:all;
-    transition:fill .32s cubic-bezier(.2,.7,.2,1),
-               stroke-width .28s ease,
-               transform .36s cubic-bezier(.2,.7,.2,1),
-               filter .36s ease;
+    transition:fill 400ms cubic-bezier(0.4,0,0.2,1),
+               transform 400ms cubic-bezier(0.4,0,0.2,1),
+               filter 300ms cubic-bezier(0.4,0,0.2,1),
+               stroke-width 280ms ease;
     transform-box:view-box;
     transform-origin:250px 250px;
   }
   .pie-g:focus-visible path{stroke:#2C4A43;stroke-width:3.5}
-  .pie-g text{transition:opacity .28s ease}
-  .pie-wrap.has-active .pie-g:not(.is-active){opacity:.88}
+  .pie-g text{transition:opacity 300ms ease,font-weight 200ms ease}
+  .pie-wrap.has-active .pie-g:not(.is-active){opacity:.65}
   .pie-wrap.has-active .pie-g:not(.is-active) text{opacity:.55}
   .pie-g.is-active path{
     stroke-width:3.5;
-    transform:scale(1.035);
-    filter:drop-shadow(0 8px 22px rgba(44,74,67,0.22));
+    transform:scale(1.03);
+    filter:drop-shadow(0 8px 24px rgba(0,0,0,0.12));
   }
   .pie-g.is-active text{font-weight:600}
   @media(hover:hover){
+    .pie-wrap.has-active .pie-g:not(.is-active):hover{opacity:1}
+    .pie-wrap.has-active .pie-g:not(.is-active):hover path{transform:scale(1.01)}
     .pie-g:hover path{filter:drop-shadow(0 6px 16px rgba(44,74,67,0.18))}
+  }
+  /* Mobile <768px: nascondi etichette negli spicchi (centro resta visibile) */
+  @media(max-width:767px){
+    .pie-g text{display:none}
   }
   #pie-svg,.pie-chips,.pie-chip{touch-action:manipulation}
   .pie-chips{display:none;list-style:none;padding:0;margin:18px auto 0;
@@ -426,7 +434,7 @@
 
 <section id="servizi" class="s srv" style="padding-top:60px;padding-bottom:60px;">
   <div class="srv-head">
-    <div><div class="eyebrow">Servizi</div><h2>Presa in <em>carico a 360°</em></h2></div>
+    <div><div class="eyebrow">Servizi</div><h2>Presa in carico a <em>360°</em></h2></div>
     <p class="lead">Trattamenti per una vasta gamma di problematiche, costruiti sulle esigenze specifiche di ogni paziente.</p>
   </div>
   <div class="pie-wrap">
