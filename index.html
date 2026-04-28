@@ -242,8 +242,37 @@
     .pie-wrap.has-active .pie-g:not(.is-active):hover path{transform:scale(1.01)}
     .pie-g:hover path{filter:drop-shadow(0 6px 16px rgba(44,74,67,0.18))}
   }
-  /* Mobile <768px: riduci font etichette spicchi per farle entrare bene */
+  /* ── MOBILE ACCORDION SERVIZI (≤767px) ── */
+  /* Default: nascosta, visibile solo su mobile */
+  .srv-mobile{display:none}
   @media(max-width:767px){
+    /* Nascondi ruota e card descrittiva desktop su mobile */
+    #servizi .pie-wrap{display:none}
+    /* Layout sezione mobile */
+    #servizi.s{padding-left:20px;padding-right:20px}
+    #servizi .srv-head{display:block;grid-template-columns:none;margin-bottom:8px}
+    #servizi .srv-head .lead{margin-top:12px;text-align:left}
+    /* Lista accordion */
+    .srv-mobile{display:flex;flex-direction:column;gap:12px;list-style:none;padding:0;margin:24px 0 0}
+    .srv-mobile-item{background:#fff;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden}
+    .srv-mobile-head{
+      width:100%;background:none;border:none;cursor:pointer;
+      display:flex;align-items:center;gap:14px;
+      padding:18px 20px;min-height:64px;
+      font-family:'Outfit',sans-serif;font-size:0.95rem;color:var(--vs);text-align:left;
+    }
+    .srv-mobile-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,0.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.4)}
+    .srv-mobile-name{flex:1;font-weight:500;line-height:1.3}
+    .srv-mobile-chev{font-size:1rem;color:var(--tm);transition:transform 350ms cubic-bezier(0.4,0,0.2,1);flex-shrink:0;line-height:1}
+    .srv-mobile-item.is-open .srv-mobile-chev{transform:rotate(180deg)}
+    .srv-mobile-body{
+      max-height:0;opacity:0;
+      transition:max-height 350ms cubic-bezier(0.4,0,0.2,1),opacity 250ms cubic-bezier(0.4,0,0.2,1);
+      overflow:hidden;
+    }
+    .srv-mobile-item.is-open .srv-mobile-body{max-height:600px;opacity:1}
+    .srv-mobile-desc{padding:0 20px 20px;font-size:15px;line-height:1.6;color:var(--t);font-weight:300}
+    /* Etichette ruota su mobile (regola pre-esistente, ora ininfluente perché ruota nascosta) */
     .pie-g text{font-size:11px}
   }
   #pie-svg{touch-action:manipulation}
@@ -519,6 +548,79 @@
       </div>
     </div>
   </div>
+
+  <ul class="srv-mobile" aria-label="Lista servizi">
+    <li class="srv-mobile-item">
+      <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-0">
+        <span class="srv-mobile-dot" style="background:#4A7C6F"></span>
+        <span class="srv-mobile-name">Linguaggio età evolutiva</span>
+        <span class="srv-mobile-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="srv-mobile-body" id="srv-m-0" role="region">
+        <div class="srv-mobile-desc">Percorsi dedicati ai bambini che iniziano a parlare più tardi, con vocabolario ridotto o difficoltà nel formulare frasi e comunicare i propri bisogni. La valutazione logopedica osserva lo sviluppo della comunicazione e, se necessario, avvia un percorso di stimolazione personalizzato per favorire una crescita comunicativo-linguistica adeguata.</div>
+      </div>
+    </li>
+    <li class="srv-mobile-item">
+      <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-1">
+        <span class="srv-mobile-dot" style="background:#D4E8E3"></span>
+        <span class="srv-mobile-name">Disturbi articolazione</span>
+        <span class="srv-mobile-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="srv-mobile-body" id="srv-m-1" role="region">
+        <div class="srv-mobile-desc">Percorsi di valutazione e riabilitazione delle abilità articolatorie attraverso attività ed esercizi mirati, con l'obiettivo di favorire l'acquisizione e l'automatizzazione della corretta produzione dei suoni.</div>
+      </div>
+    </li>
+    <li class="srv-mobile-item">
+      <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-2">
+        <span class="srv-mobile-dot" style="background:#C9A96E"></span>
+        <span class="srv-mobile-name">Squilibrio oro-facciale</span>
+        <span class="srv-mobile-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="srv-mobile-body" id="srv-m-2" role="region">
+        <div class="srv-mobile-desc">Percorsi per chi presenta uno squilibrio della muscolatura oro-facciale che può manifestarsi con difficoltà nella respirazione, masticazione, deglutizione e articolazione. Un intervento precoce può prevenire compensi posturali e disfunzioni a lungo termine.</div>
+      </div>
+    </li>
+    <li class="srv-mobile-item">
+      <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-3">
+        <span class="srv-mobile-dot" style="background:#2C4A43"></span>
+        <span class="srv-mobile-name">Disfagia</span>
+        <span class="srv-mobile-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="srv-mobile-body" id="srv-m-3" role="region">
+        <div class="srv-mobile-desc">Percorsi volti a migliorare la sicurezza e l'efficacia della deglutizione, con esercizi e strategie personalizzate per favorire la funzionalità delle funzioni orali e un'alimentazione sicura.</div>
+      </div>
+    </li>
+    <li class="srv-mobile-item">
+      <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-4">
+        <span class="srv-mobile-dot" style="background:#F0E6D3"></span>
+        <span class="srv-mobile-name">Disfonia</span>
+        <span class="srv-mobile-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="srv-mobile-body" id="srv-m-4" role="region">
+        <div class="srv-mobile-desc">Percorsi personalizzati di valutazione e riabilitazione della voce, combinando tecniche cliniche e funzionali per migliorare qualità, efficacia e resistenza vocale.</div>
+      </div>
+    </li>
+    <li class="srv-mobile-item">
+      <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-5">
+        <span class="srv-mobile-dot" style="background:#8BB5AB"></span>
+        <span class="srv-mobile-name">Parkinson</span>
+        <span class="srv-mobile-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="srv-mobile-body" id="srv-m-5" role="region">
+        <div class="srv-mobile-desc">Trattamento mirato della voce e della comunicazione nei pazienti con malattia di Parkinson, attraverso approcci riabilitativi specifici basati sull'evidenza.</div>
+      </div>
+    </li>
+    <li class="srv-mobile-item">
+      <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-6">
+        <span class="srv-mobile-dot" style="background:#6B8F85"></span>
+        <span class="srv-mobile-name">Afasia e disartria</span>
+        <span class="srv-mobile-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="srv-mobile-body" id="srv-m-6" role="region">
+        <div class="srv-mobile-desc">Percorso di valutazione e riabilitazione nei disturbi di linguaggio e di articolazione acquisiti nel paziente neurologico adulto.</div>
+      </div>
+    </li>
+  </ul>
   <script>
   (function(){
     var _pieColors = ['#4A7C6F','#D4E8E3','#C9A96E','#2C4A43','#F0E6D3','#8BB5AB','#6B8F85'];
@@ -647,9 +749,28 @@
         });
       }
 
-      /* Chip pills */
+      /* Chip pills (legacy, ora rimossi — NodeList vuoto, no-op) */
       document.querySelectorAll('.pie-chip').forEach(function(c, i){
         c.addEventListener('click', function(){ activate(i); });
+      });
+
+      /* Accordion mobile servizi */
+      var srvItems = document.querySelectorAll('.srv-mobile-item');
+      srvItems.forEach(function(item){
+        var btn = item.querySelector('.srv-mobile-head');
+        if(!btn) return;
+        btn.addEventListener('click', function(){
+          var wasOpen = item.classList.contains('is-open');
+          srvItems.forEach(function(other){
+            other.classList.remove('is-open');
+            var b = other.querySelector('.srv-mobile-head');
+            if(b) b.setAttribute('aria-expanded','false');
+          });
+          if(!wasOpen){
+            item.classList.add('is-open');
+            btn.setAttribute('aria-expanded','true');
+          }
+        });
       });
     }
 
