@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <meta name="description" content="Centro di logopedia a Udine. Percorsi personalizzati per bambini e adulti con Jovana Ikač e Monica Salvadori Cavazzon.">
+<meta name="keywords" content="logopedista Udine, logopedia Udine, ComuniCare, Jovana Ikač, Monica Salvadori Cavazzon, disturbi del linguaggio, riabilitazione vocale, disfagia, disfonia, età evolutiva, bambini Udine">
 <!-- fix: Open Graph — SEO e condivisione social -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="ComuniCare — Logopediste a Udine">
@@ -149,13 +150,15 @@
   .hero-btns{animation:up .5s .28s both}
   @media(max-width:960px){
     nav{padding:0 24px}.nav-links{display:none}
+    .nav-hamburger{display:flex}
     .s{padding:64px 24px}
     .hero-inner{grid-template-columns:1fr}
     .hero-r{display:none}
     .hero-l{padding:56px 24px 72px}
     .chi-inner,.ctc-inner{grid-template-columns:1fr;gap:40px}
-    .srv-head{grid-template-columns:1fr;gap:16px}
-    .srv-grid,.team-cards{grid-template-columns:1fr}
+    .srv-head,.team-head,.spazi-head,.ctc-head{grid-template-columns:1fr;gap:16px}
+    .srv-grid,.team-cards,.spazi-grid{grid-template-columns:1fr}
+    .spazi-card--wide{grid-column:auto}
     footer{flex-direction:column;gap:16px;padding:28px 24px;text-align:center}
   }
 
@@ -260,6 +263,40 @@
       scroll-behavior:auto !important;
     }
   }
+  /* ── HAMBURGER MENU ── */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:44px;height:44px;background:none;border:none;cursor:pointer;gap:5px;padding:8px;flex-shrink:0}
+  .nav-hamburger span{display:block;width:22px;height:2px;background:var(--tm);border-radius:2px;transition:transform .25s ease,opacity .25s ease}
+  .nav-hamburger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-hamburger.is-open span:nth-child(2){opacity:0}
+  .nav-hamburger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(251,250,247,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(74,124,111,0.12);z-index:199;padding:8px 24px 24px;flex-direction:column}
+  .nav-mobile.is-open{display:flex}
+  .nav-mobile li{list-style:none;border-bottom:1px solid rgba(74,124,111,0.07)}
+  .nav-mobile li:last-child{border-bottom:none;padding-top:12px}
+  .nav-mobile a{display:block;font-size:0.85rem;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;color:var(--tm);padding:13px 0;transition:color .2s}
+  .nav-mobile a:hover{color:var(--v)}
+  .nav-mobile .nav-pill{background:var(--v)!important;color:#fff!important;padding:12px 24px!important;border-radius:100px;text-align:center;font-size:0.78rem!important;display:block;margin-top:4px}
+  /* ── MODAL PRIVACY / COOKIE ── */
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(28,43,39,0.55);z-index:500;align-items:flex-start;justify-content:center;padding:80px 24px 24px;overflow-y:auto}
+  .modal-overlay.is-open{display:flex}
+  .modal-box{background:#fff;border-radius:16px;max-width:640px;width:100%;padding:40px 44px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.2)}
+  .modal-box h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:var(--vs);margin-bottom:8px}
+  .modal-box .modal-date{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--tl);margin-bottom:24px}
+  .modal-box h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--vs);margin:20px 0 6px}
+  .modal-box p{font-size:0.87rem;line-height:1.75;color:var(--tm);margin-bottom:10px}
+  .modal-close{position:absolute;top:16px;right:16px;background:none;border:1px solid rgba(74,124,111,0.15);font-size:1.1rem;cursor:pointer;color:var(--tl);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s,border-color .2s}
+  .modal-close:hover{background:var(--vc);border-color:var(--vm)}
+  @media(max-width:640px){.modal-box{padding:28px 20px}.modal-overlay{padding:72px 12px 12px}}
+  /* ── FIX RESPONSIVE MOBILE ── */
+  @media(max-width:480px){
+    .hero-brand-name{font-size:clamp(2.6rem,11vw,3.8rem)!important}
+    .hero-l{padding:36px 16px 48px!important}
+    h1{font-size:clamp(2.2rem,9vw,3rem)!important}
+    .s{padding:48px 16px!important}
+    .pie-chart-container{max-width:100%!important}
+    .ctc-inner{gap:28px}
+  }
+
 </style>
 </head>
 <body>
@@ -287,7 +324,17 @@
     <li><a href="#contatti">Contatti</a></li>
     <li><a href="#contatti" class="nav-pill">Prenota</a></li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Apri menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<ul class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Menu mobile">
+  <li><a href="#chi-siamo">Chi siamo</a></li>
+  <li><a href="#servizi">Servizi</a></li>
+  <li><a href="#team">Team</a></li>
+  <li><a href="#contatti">Contatti</a></li>
+  <li><a href="#contatti" class="nav-pill">Prenota</a></li>
+</ul>
 
 <div class="hero">
   <div class="hero-bg-word">ComuniCare</div>
@@ -653,11 +700,11 @@
       </div>
       <div class="ctc-rows">
         <div class="ctc-row"><span class="ctc-ico">📍</span><div><span class="ctc-lbl">Indirizzo</span><span class="ctc-val">Via Bertaldia 91, 33100 Udine (UD)</span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">📞</span><div><span class="ctc-lbl">Jovana Ikač — Tel.</span><span class="ctc-val">[numero da inserire]</span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">✉️</span><div><span class="ctc-lbl">Jovana Ikač — Email</span><span class="ctc-val">[email da inserire]</span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">📞</span><div><span class="ctc-lbl">Monica Salvadori Cavazzon — Tel.</span><span class="ctc-val">[numero da inserire]</span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">✉️</span><div><span class="ctc-lbl">Monica Salvadori Cavazzon — Email</span><span class="ctc-val">[email da inserire]</span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">🕐</span><div><span class="ctc-lbl">Orari</span><span class="ctc-val">[orari da inserire]</span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">📞</span><div><span class="ctc-lbl">Jovana Ikač — Tel.</span><span class="ctc-val"><!-- INSERIRE NUMERO JOVANA --></span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">✉️</span><div><span class="ctc-lbl">Jovana Ikač — Email</span><span class="ctc-val"><!-- INSERIRE EMAIL JOVANA --></span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">📞</span><div><span class="ctc-lbl">Monica Salvadori Cavazzon — Tel.</span><span class="ctc-val"><!-- INSERIRE NUMERO MONICA --></span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">✉️</span><div><span class="ctc-lbl">Monica Salvadori Cavazzon — Email</span><span class="ctc-val"><!-- INSERIRE EMAIL MONICA --></span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">🕐</span><div><span class="ctc-lbl">Orari</span><span class="ctc-val"><!-- INSERIRE ORARI (es. Lun-Ven 9:00–18:00) --></span></div></div>
       </div>
     </div>
     <a href="https://maps.app.goo.gl/crx2L8pMz7y8QiF69" target="_blank" class="map-box" style="text-decoration:none;cursor:pointer;transition:all .2s;">
@@ -683,8 +730,8 @@
     </div>
     <div style="font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(201,169,110,0.7);font-family:'Outfit',sans-serif;">Logopedia · Udine</div>
   </div>
-  <div class="f-copy">© 2025 Logopediste Udine — P.IVA da inserire</div>
-  <div class="f-links"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div>
+  <div class="f-copy">© 2025 Logopediste Udine — P.IVA <!-- INSERIRE P.IVA --></div>
+  <div class="f-links"><a href="#" onclick="openModal('privacy-modal');return false;">Privacy Policy</a><a href="#" onclick="openModal('cookie-modal');return false;">Cookie Policy</a></div>
 </footer>
 <script>
 (function(){
@@ -739,6 +786,84 @@
     }, {capture:true, passive:true});
   });
 })();
+</script>
+
+<!-- ── MODAL PRIVACY POLICY ── -->
+<div class="modal-overlay" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacy-modal')" aria-label="Chiudi">✕</button>
+    <h3 id="privacy-title">Privacy Policy</h3>
+    <p class="modal-date"><!-- INSERIRE DATA AGGIORNAMENTO --></p>
+    <p><!-- INSERIRE TESTO LEGALE COMPLETO DELLA PRIVACY POLICY CONFORME AL GDPR (Reg. UE 2016/679). Il testo di seguito è un segnaposto da sostituire con il testo redatto dal vostro consulente legale o DPO. --></p>
+    <h4>Titolare del trattamento</h4>
+    <p><!-- INSERIRE: ragione sociale, indirizzo, email del titolare del trattamento --></p>
+    <h4>Dati raccolti</h4>
+    <p>Il sito raccoglie dati di navigazione (indirizzo IP, browser, pagine visitate) tramite i server di hosting e, se attivi, eventuali cookie analitici. Non vengono raccolti dati personali senza esplicito consenso dell'interessato.</p>
+    <h4>Finalità del trattamento</h4>
+    <p>I dati sono trattati esclusivamente per finalità di gestione tecnica del sito e, previo consenso, per l'invio di comunicazioni relative ai servizi offerti.</p>
+    <h4>Conservazione e diritti dell'interessato</h4>
+    <p>I dati sono conservati per il tempo strettamente necessario alle finalità indicate. L'interessato ha diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione al trattamento, scrivendo a <!-- INSERIRE EMAIL DPO O TITOLARE -->.</p>
+    <h4>Reclami</h4>
+    <p>L'interessato può proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it).</p>
+  </div>
+</div>
+
+<!-- ── MODAL COOKIE POLICY ── -->
+<div class="modal-overlay" id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('cookie-modal')" aria-label="Chiudi">✕</button>
+    <h3 id="cookie-title">Cookie Policy</h3>
+    <p class="modal-date"><!-- INSERIRE DATA AGGIORNAMENTO --></p>
+    <p><!-- INSERIRE TESTO LEGALE COMPLETO DELLA COOKIE POLICY. Il testo di seguito è un segnaposto da sostituire con il testo redatto dal vostro consulente legale. --></p>
+    <h4>Cosa sono i cookie</h4>
+    <p>I cookie sono piccoli file di testo salvati sul dispositivo dell'utente durante la navigazione. Questo sito utilizza esclusivamente cookie tecnici necessari al corretto funzionamento delle pagine.</p>
+    <h4>Cookie tecnici (necessari)</h4>
+    <p>Sono utilizzati per garantire la navigazione e il funzionamento del sito. Non richiedono il consenso dell'utente ai sensi dell'art. 122 del Codice Privacy e delle Linee guida del Garante del 2021.</p>
+    <h4>Cookie analitici e di profilazione</h4>
+    <p><!-- SPECIFICARE: se utilizzate Google Analytics o altri strumenti di analisi, indicarli qui con le relative modalità di opt-out. Se non utilizzati, rimuovere questa sezione. --></p>
+    <h4>Gestione dei cookie</h4>
+    <p>L'utente può gestire le preferenze sui cookie attraverso le impostazioni del proprio browser. La disabilitazione dei cookie tecnici potrebbe compromettere il corretto funzionamento del sito.</p>
+  </div>
+</div>
+
+<script>
+/* ── HAMBURGER MENU ── */
+(function(){
+  var btn = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('nav-mobile');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('is-open');
+      btn.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+/* ── MODALI ── */
+function openModal(id){
+  var m = document.getElementById(id);
+  if(m){ m.classList.add('is-open'); document.body.style.overflow='hidden'; }
+}
+function closeModal(id){
+  var m = document.getElementById(id);
+  if(m){ m.classList.remove('is-open'); document.body.style.overflow=''; }
+}
+document.addEventListener('click', function(e){
+  if(e.target.classList.contains('modal-overlay')) closeModal(e.target.id);
+});
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape'){
+    document.querySelectorAll('.modal-overlay.is-open').forEach(function(m){
+      closeModal(m.id);
+    });
+  }
+});
 </script>
 </body>
 </html>
