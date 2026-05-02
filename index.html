@@ -248,6 +248,31 @@
     .pie-wrap.has-active .pie-g:not(.is-active):hover path{transform:scale(1.01)}
     .pie-g:hover path{filter:drop-shadow(0 6px 16px rgba(44,74,67,0.18))}
   }
+  /* ── SEZIONE PROGETTI ── */
+  .prj{background:var(--bg)}
+  .prj-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:40px}
+  .prj-card{background:var(--cr);border-radius:16px;padding:48px;border:1px solid rgba(74,124,111,0.08)}
+  .prj-card-name{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.2vw,2rem);font-weight:400;color:var(--vs);margin-bottom:6px;line-height:1.2}
+  .prj-card-name em{font-style:italic;color:var(--v)}
+  .prj-card-sub{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--s);margin-bottom:28px}
+  .prj-card-body p{font-size:0.95rem;font-weight:300;color:var(--tm);line-height:1.75;margin-bottom:14px}
+  .prj-card-body p:last-of-type{margin-bottom:0}
+  .prj-info{margin-top:32px;padding:26px 30px;background:var(--w);border-radius:12px;border:1px solid rgba(74,124,111,0.12)}
+  .prj-info-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--s);margin-bottom:16px;font-weight:500;font-family:'Outfit',sans-serif}
+  .prj-info-rows{display:flex;flex-direction:column;gap:8px}
+  .prj-info-row{display:flex;gap:14px;font-size:0.86rem;line-height:1.55;color:var(--t)}
+  .prj-info-row span.prj-info-lbl{color:var(--tl);min-width:96px;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;padding-top:3px;font-weight:500;flex-shrink:0}
+  .prj-info-row a{color:var(--v);text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.3);transition:color .2s,border-color .2s}
+  .prj-info-row a:hover{color:var(--vs);border-color:var(--vs)}
+  @media(max-width:960px){
+    .prj-head{grid-template-columns:1fr;gap:16px}
+  }
+  @media(max-width:767px){
+    .prj-card{padding:28px 22px}
+    .prj-info{padding:20px 20px}
+    .prj-info-row{flex-direction:column;gap:2px}
+    .prj-info-row span.prj-info-lbl{min-width:0;padding-top:0}
+  }
   /* ── MOBILE ACCORDION SERVIZI (≤767px) ── */
   /* Default: nascosta, visibile solo su mobile */
   .srv-mobile{display:none}
@@ -427,7 +452,6 @@
       <div class="eyebrow">Il team</div>
       <h2><em>Logopediste</em></h2>
     </div>
-    <p class="lead">Due professioniste, un unico obiettivo. Clicca per scoprire il profilo completo.</p>
   </div>
   <div class="team-cards">
     <a href="jovana.html" class="team-card">
@@ -579,7 +603,7 @@
     <li class="srv-mobile-item">
       <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-2">
         <span class="srv-mobile-dot" style="background:#C9A96E"></span>
-        <span class="srv-mobile-name">Squilibrio oro-facciale</span>
+        <span class="srv-mobile-name">Squilibrio muscolare oro-facciale e deglutizione disfunzionale</span>
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-2" role="region">
@@ -593,7 +617,7 @@
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-3" role="region">
-        <div class="srv-mobile-desc">Percorsi volti a migliorare la sicurezza e l'efficacia della deglutizione, con esercizi e strategie personalizzate per favorire la funzionalità delle funzioni orali e un'alimentazione sicura.</div>
+        <div class="srv-mobile-desc">Percorsi volti a migliorare la sicurezza e l'efficacia della deglutizione, con esercizi e strategie personalizzate per favorire la funzionalità delle funzioni orali e un'alimentazione sicura, in pazienti anziani, neurologici e pazienti post-chirurgici sottoposti a chirurgia testa-collo.</div>
       </div>
     </li>
     <li class="srv-mobile-item">
@@ -623,7 +647,7 @@
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-6" role="region">
-        <div class="srv-mobile-desc">Percorso di valutazione e riabilitazione nei disturbi di linguaggio e di articolazione acquisiti nel paziente neurologico adulto.</div>
+        <div class="srv-mobile-desc">Percorso di valutazione dei disturbi di linguaggio e di articolazione acquisiti nel paziente neurologico adulto.</div>
       </div>
     </li>
   </ul>
@@ -644,10 +668,10 @@
       "Percorsi dedicati ai bambini che iniziano a parlare più tardi, con vocabolario ridotto o difficoltà nel formulare frasi e comunicare i propri bisogni. La valutazione logopedica osserva lo sviluppo della comunicazione e, se necessario, avvia un percorso di stimolazione personalizzato per favorire una crescita comunicativo-linguistica adeguata.",
       "Percorsi di valutazione e riabilitazione delle abilità articolatorie attraverso attività ed esercizi mirati, con l'obiettivo di favorire l'acquisizione e l'automatizzazione della corretta produzione dei suoni.",
       "Percorsi per chi presenta uno squilibrio della muscolatura oro-facciale che può manifestarsi con difficoltà nella respirazione, masticazione, deglutizione e articolazione. Un intervento precoce può prevenire compensi posturali e disfunzioni a lungo termine.",
-      "Percorsi volti a migliorare la sicurezza e l'efficacia della deglutizione, con esercizi e strategie personalizzate per favorire la funzionalità delle funzioni orali e un'alimentazione sicura.",
+      "Percorsi volti a migliorare la sicurezza e l'efficacia della deglutizione, con esercizi e strategie personalizzate per favorire la funzionalità delle funzioni orali e un'alimentazione sicura, in pazienti anziani, neurologici e pazienti post-chirurgici sottoposti a chirurgia testa-collo.",
       "Percorsi personalizzati di valutazione e riabilitazione della voce, combinando tecniche cliniche e funzionali per migliorare qualità, efficacia e resistenza vocale.",
       "Trattamento mirato della voce e della comunicazione nei pazienti con malattia di Parkinson, attraverso approcci riabilitativi specifici basati sull'evidenza.",
-      "Percorso di valutazione e riabilitazione nei disturbi di linguaggio e di articolazione acquisiti nel paziente neurologico adulto."
+      "Percorso di valutazione dei disturbi di linguaggio e di articolazione acquisiti nel paziente neurologico adulto."
     ];
 
     var _active = -1;
@@ -790,6 +814,44 @@
 </section>
 
 
+<!-- PROGETTI -->
+<section id="progetti" class="s prj">
+  <div class="prj-head">
+    <div>
+      <div class="eyebrow">Progetti</div>
+      <h2>I nostri <em>progetti</em></h2>
+    </div>
+    <p class="lead">Organizziamo eventi di informazione e prevenzione sulle tematiche della voce, della deglutizione, della comunicazione e della loro cura.</p>
+  </div>
+
+  <article class="prj-card">
+    <h3 class="prj-card-name">Corale <em>Gioconda</em></h3>
+    <div class="prj-card-sub">Coro per persone affette dalla malattia di Parkinson</div>
+
+    <div class="prj-card-body">
+      <p>La Corale Gioconda è un coro costituito da persone affette dalla malattia di Parkinson e da alcuni dei loro familiari, nato nell'ottobre del 2003, presso l'Istituto di Medicina Fisica e Riabilitazione (Ospedale Gervasutta) di Udine. Questo progetto prevede l'integrazione di un programma riabilitativo logopedico specifico e di un'attività ben strutturata di canto e musicoterapia vocale, con lo scopo di sviluppare diversi canali di comunicazione e di rieducare le abilità linguistiche che, a causa di questa patologia, possono essere anche gravemente compromesse.</p>
+      <p>Lo scopo di questa attività è inoltre quello di spronare l'attuazione di attività integrate nei programmi terapeutici, al fine di migliorare la qualità di vita delle persone: è ormai assodato che l'utilizzo del canto, della pratica coro-musicale e musicoterapica, ben si integra con gli interventi di riabilitazione, concorrendo al raggiungimento di un miglior livello di vita possibile sul piano fisico, funzionale, affettivo, emozionale e relazionale.</p>
+      <p>La Corale Gioconda è coordinata e diretta fin dalla sua nascita dalla logopedista Monica Salvadori Cavazzon, ideatrice anche del progetto.</p>
+    </div>
+
+    <div class="prj-info">
+      <div class="prj-info-title">Per ulteriori informazioni</div>
+      <div class="prj-info-rows">
+        <div class="prj-info-row"><span class="prj-info-lbl">Ente</span><span>CORALE GIOCONDA – UDINE - O.D.V.</span></div>
+        <div class="prj-info-row"><span class="prj-info-lbl">Sede</span><span>33100 Udine, Via Gervasutta 48 — c/o Istituto di Medicina Fisica e Riabilitazione</span></div>
+        <div class="prj-info-row"><span class="prj-info-lbl">Iscritta</span><span>R.U.N.T.S.</span></div>
+        <div class="prj-info-row"><span class="prj-info-lbl">C.F.</span><span>94091830300</span></div>
+        <div class="prj-info-row"><span class="prj-info-lbl">IBAN</span><span>IT62P0306912344100000066038</span></div>
+        <div class="prj-info-row"><span class="prj-info-lbl">PEC</span><a href="mailto:coralegiocondaodv@pec.it">coralegiocondaodv@pec.it</a></div>
+        <div class="prj-info-row"><span class="prj-info-lbl">Email</span><a href="mailto:coralegiocondaodv@gmail.com">coralegiocondaodv@gmail.com</a></div>
+        <div class="prj-info-row"><span class="prj-info-lbl">Telefono</span><span><a href="tel:+393452444948">345 244 4948</a> – <a href="tel:+393388759256">338 875 9256</a></span></div>
+        <div class="prj-info-row"><span class="prj-info-lbl">Sito web</span><a href="http://www.coralegioconda.org" target="_blank" rel="noopener">www.coralegioconda.org</a></div>
+      </div>
+    </div>
+  </article>
+</section>
+
+
 <!-- SPAZI -->
 <section id="spazi" class="s spazi">
   <div class="spazi-head">
@@ -828,10 +890,10 @@
       </div>
       <div class="ctc-rows">
         <div class="ctc-row"><span class="ctc-ico">📍</span><div><span class="ctc-lbl">Indirizzo</span><span class="ctc-val">Via Bertaldia 91, 33100 Udine (UD)</span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">📞</span><div><span class="ctc-lbl">Jovana Ikač — Tel.</span><span class="ctc-val"><!-- INSERIRE NUMERO JOVANA --></span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">✉️</span><div><span class="ctc-lbl">Jovana Ikač — Email</span><span class="ctc-val"><!-- INSERIRE EMAIL JOVANA --></span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">📞</span><div><span class="ctc-lbl">Monica Salvadori Cavazzon — Tel.</span><span class="ctc-val"><!-- INSERIRE NUMERO MONICA --></span></div></div>
-        <div class="ctc-row"><span class="ctc-ico">✉️</span><div><span class="ctc-lbl">Monica Salvadori Cavazzon — Email</span><span class="ctc-val"><!-- INSERIRE EMAIL MONICA --></span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">📞</span><div><span class="ctc-lbl">Jovana Ikač — Tel.</span><span class="ctc-val"><a href="tel:+393520515665" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.25);transition:border-color .2s">+39 352 0515665</a></span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">✉️</span><div><span class="ctc-lbl">Jovana Ikač — Email</span><span class="ctc-val"><a href="mailto:ikac.jovana@icloud.com" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.25);transition:border-color .2s">ikac.jovana@icloud.com</a></span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">📞</span><div><span class="ctc-lbl">Monica Salvadori Cavazzon — Tel.</span><span class="ctc-val"><a href="tel:+393520919410" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.25);transition:border-color .2s">+39 352 0919410</a></span></div></div>
+        <div class="ctc-row"><span class="ctc-ico">✉️</span><div><span class="ctc-lbl">Monica Salvadori Cavazzon — Email</span><span class="ctc-val"><a href="mailto:msalvadoricavazzon@gmail.com" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.25);transition:border-color .2s">msalvadoricavazzon@gmail.com</a></span></div></div>
         <div class="ctc-row"><span class="ctc-ico">🕐</span><div><span class="ctc-lbl">Orari</span><span class="ctc-val"><!-- INSERIRE ORARI (es. Lun-Ven 9:00–18:00) --></span></div></div>
       </div>
     </div>
