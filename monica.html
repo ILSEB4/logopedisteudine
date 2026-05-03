@@ -37,29 +37,22 @@
   .nav-back:hover{color:var(--v)}
   .nav-back::before{content:'←';font-size:1rem}
 
-  /* HERO */
-  .hero{display:grid;grid-template-columns:42% 58%;min-height:100vh;min-height:100svh;padding-top:64px}
-  .hero-l{background:var(--vs);display:flex;flex-direction:column;justify-content:flex-end;padding:56px 52px;position:relative;overflow:hidden}
-  .hero-l::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,181,171,0.12) 0%,transparent 65%)}
-  .hero-l::after{content:'';position:absolute;top:80px;left:40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,0.1) 0%,transparent 70%)}
-  .hero-avatar{width:180px;height:180px;border-radius:50%;overflow:hidden;border:4px solid var(--s);margin-bottom:32px;position:relative;z-index:1;box-shadow:0 8px 32px rgba(0,0,0,0.25)}
-  .hero-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-  /* fix: foto profilo mobile <768px → 140px diametro */
-  @media(max-width:767px){
-    .hero-avatar{width:140px;height:140px;margin-bottom:24px;border-width:3px}
-  }
-  .hero-nome{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--cr);line-height:1.1;margin-bottom:10px;position:relative;z-index:1}
-  .hero-titolo{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--s);margin-bottom:32px;position:relative;z-index:1}
-  .hero-quote-block{border-left:2px solid rgba(201,169,110,0.4);padding-left:20px;margin-bottom:0;position:relative;z-index:1}
-  .hero-quote{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:rgba(247,243,236,0.75);line-height:1.6}
-  .hero-quote-attr{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(139,181,171,0.6);margin-top:10px}
+  /* HERO — layout stile jovana: foto a sx 50%, contenuto a dx 50% */
+  .hero{display:grid;grid-template-columns:50% 50%;min-height:100vh;min-height:100svh;padding-top:64px}
+  .hero-foto{position:relative;overflow:hidden;background:var(--vs)}
+  .hero-foto img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+  .hero-foto::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 70%,rgba(44,74,67,0.15) 100%)}
+  .hero-foto-quote{position:absolute;bottom:0;left:0;right:0;padding:32px 36px;background:linear-gradient(transparent,rgba(44,74,67,0.85));z-index:2}
+  .hero-foto-quote-text{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:rgba(247,243,236,0.9);line-height:1.5;margin-bottom:6px}
+  .hero-foto-quote-attr{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(201,169,110,0.8)}
 
-  .hero-r{display:flex;flex-direction:column;justify-content:center;padding:80px 72px 80px 64px;background:var(--bg)}
+  .hero-r{display:flex;flex-direction:column;justify-content:center;padding:72px 64px 72px 56px;background:var(--bg);position:relative}
   .eyebrow{display:flex;align-items:center;gap:10px;font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--s);margin-bottom:14px}
   .eyebrow::before{content:'';width:18px;height:1px;background:var(--s)}
-  h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:400;line-height:1.2;color:var(--vs);margin-bottom:24px}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.2vw,3rem);font-weight:400;line-height:1.1;color:var(--vs);margin-bottom:10px;letter-spacing:-0.01em}
   h1 em{font-style:italic;color:var(--v)}
-  .hero-intro{font-size:0.97rem;font-weight:300;color:var(--tm);line-height:1.85;margin-bottom:36px;max-width:520px}
+  .hero-titolo{font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--tl);margin-bottom:24px;font-weight:300}
+  .hero-intro{font-size:0.95rem;font-weight:300;color:var(--tm);line-height:1.7;max-width:480px;margin-bottom:28px}
   .hero-intro strong{font-weight:500;color:var(--t)}
   .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
   .tag{display:inline-flex;align-items:center;gap:6px;background:var(--vc);color:var(--vs);font-size:0.72rem;font-weight:500;letter-spacing:0.05em;padding:6px 14px;border-radius:100px}
@@ -79,12 +72,6 @@
   .chi-bio p{font-size:0.9rem;font-weight:300;color:var(--tm);line-height:1.6;margin-bottom:12px}
   .chi-bio p:last-child{margin-bottom:0}
   .chi-bio strong{font-weight:500;color:var(--t)}
-  .chi-photo{border-radius:16px;overflow:hidden;aspect-ratio:3/4;max-height:420px}
-  .chi-photo img{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block}
-  .info-card{background:var(--w);border-radius:10px;padding:14px 18px;border:1px solid rgba(74,124,111,0.08)}
-  .info-card-label{font-size:0.67rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--tl);margin-bottom:6px}
-  .info-card-value{font-size:0.85rem;color:var(--t);font-weight:400;line-height:1.45}
-  .info-card-value a{color:var(--v);text-decoration:none}
 
   /* FORMAZIONE */
   .form-section{background:var(--bg)}
@@ -156,16 +143,17 @@
   .f-back:hover{color:var(--vm)}
 
   @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-  .hero-avatar{animation:up .5s .05s both}
-  .hero-nome{animation:up .5s .12s both}
+  .hero-r .eyebrow{animation:up .5s .05s both}
+  h1{animation:up .5s .12s both}
   .hero-titolo{animation:up .5s .18s both}
-  .hero-quote-block{animation:up .5s .25s both}
+  .hero-intro{animation:up .5s .24s both}
+  .btn-contatta{animation:up .5s .3s both}
 
   @media(max-width:960px){
     nav{padding:0 24px}
     .hero{grid-template-columns:1fr}
-    .hero-l{padding:48px 24px;min-height:300px}
-    .hero-r{padding:56px 24px}
+    .hero-foto{min-height:320px}
+    .hero-r{padding:48px 24px}
     .s,.corale,.srv-section,.citazione,.ctc{padding:60px 24px}
     .chi-grid,.form-grid,.corale-inner{grid-template-columns:1fr;gap:36px}
     .ctc-cards{grid-template-columns:1fr}
@@ -223,20 +211,19 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-l">
-    <div class="hero-avatar"><img src="monica.jpg" alt="Monica Salvadori Cavazzon, logopedista e musicoterapeuta" loading="lazy" decoding="async" width="180" height="180"></div>
-    <div class="hero-nome">Monica<br>Salvadori<br>Cavazzon</div>
-    <div class="hero-titolo">Logopedista · Musicoterapeuta</div>
-    <div class="hero-quote-block">
-      <div class="hero-quote">"Credo in un approccio riabilitativo che unisca competenza clinica, ascolto e attenzione alla specificità di ogni persona."</div>
-      <div class="hero-quote-attr">— Monica Salvadori Cavazzon</div>
+  <div class="hero-foto">
+    <img src="monica.jpg" alt="Monica Salvadori Cavazzon — Logopedista e Musicoterapeuta" loading="lazy" decoding="async" width="800" height="1000">
+    <div class="hero-foto-quote">
+      <div class="hero-foto-quote-text">"Credo in un approccio riabilitativo che unisca competenza clinica, ascolto e attenzione alla specificità di ogni persona."</div>
+      <div class="hero-foto-quote-attr">— Monica Salvadori Cavazzon</div>
     </div>
   </div>
   <div class="hero-r">
     <div class="eyebrow">Logopedista · Musicoterapeuta · Udine</div>
-    <h1>Oltre vent'anni di cura<br>della <em>voce e del linguaggio</em></h1>
+    <h1>Monica<br><em>Salvadori Cavazzon</em></h1>
+    <div class="hero-titolo">Logopedista · Musicoterapeuta</div>
     <p class="hero-intro">
-      Da oltre vent'anni mi occupo della valutazione e della riabilitazione dei disturbi della voce, del linguaggio e della deglutizione nell'adulto, con particolare attenzione alla <strong>riabilitazione vocale</strong> e alle problematiche legate a patologie neurologiche e otorinolaringoiatriche.
+      Da oltre vent'anni mi occupo della valutazione e della riabilitazione dei <strong>disturbi della voce, del linguaggio e della deglutizione</strong> nell'adulto, con attenzione alle problematiche neurologiche e otorinolaringoiatriche.
     </p>
     <a href="mailto:msalvadoricavazzon@gmail.com" class="btn-contatta">Contattami</a>
   </div>
@@ -244,7 +231,7 @@
 
 <!-- CHI SONO -->
 <section id="chi-sono" class="s chi">
-  <div class="chi-grid">
+  <div class="chi-grid" style="grid-template-columns:1fr;max-width:800px;margin:0 auto">
     <div class="chi-bio">
       <div class="eyebrow">Chi sono</div>
       <h2>Il mio <em>percorso</em></h2>
@@ -252,27 +239,6 @@
       <p>Nel corso della mia attività professionale ho maturato <strong>oltre vent'anni di esperienza clinica</strong> all'interno di strutture del Servizio Sanitario Pubblico. Dopo un lungo percorso nella riabilitazione neurologica, la mia attività si è progressivamente orientata verso l'ambito otorinolaringoiatrico e vocologico, con particolare attenzione alla valutazione e alla riabilitazione della voce.</p>
       <p>Attualmente lavoro presso il <strong>Centro Otorinolaringoiatrico di Diagnosi e Riabilitazione Audio-Logopedica (CODRAL)</strong> dell'Ospedale Santa Maria della Misericordia di Udine.</p>
       <p>Sono socia del <strong>Gruppo Italiano Vocologi Clinici (GIVoC)</strong> e partecipo regolarmente ad attività di aggiornamento e formazione continua. Svolgo anche attività di docenza e formazione, collaborando con corsi di laurea e scuole di musicoterapia.</p>
-    </div>
-    <div class="chi-aside">
-      <div class="chi-photo">
-        <img src="monica.jpg" alt="Monica Salvadori Cavazzon, logopedista e musicoterapeuta" loading="lazy" decoding="async" width="600" height="800">
-      </div>
-      <div class="info-card">
-        <div class="info-card-label">Sede clinica pubblica</div>
-        <div class="info-card-value">CODRAL — Centro Otorinolaringoiatrico di Diagnosi e Riabilitazione Audio-Logopedica<br>Ospedale Santa Maria della Misericordia, Udine</div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-label">Iscrizione Ordine</div>
-        <div class="info-card-value">Ordine TSRM-PSTRP<br>Province di Gorizia, Pordenone, Trieste e Udine</div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-label">Associazioni professionali</div>
-        <div class="info-card-value">Gruppo Italiano Vocologi Clinici (GIVC)</div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-label">Docenza e formazione</div>
-        <div class="info-card-value">Corsi di laurea e scuole di musicoterapia</div>
-      </div>
     </div>
   </div>
 </section>
