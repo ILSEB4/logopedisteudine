@@ -226,23 +226,20 @@
   .pie-ratio svg{width:100%;height:auto;display:block;overflow:visible;
                  touch-action:manipulation;-webkit-tap-highlight-color:transparent}
   .pie-hint{display:none;text-align:center;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--tl);margin-top:12px}
-  .pie-detail{flex:1;min-width:240px;max-width:320px;background:var(--w);border-radius:16px;padding:28px 30px;border:1px solid rgba(74,124,111,0.14);box-shadow:0 6px 28px rgba(74,124,111,0.1);transition:border-color .2s,box-shadow .2s}
+  .pie-detail{flex-shrink:0;width:360px;max-width:360px;background:var(--w);border-radius:16px;padding:28px 28px;border:1px solid rgba(74,124,111,0.14);box-shadow:0 6px 28px rgba(74,124,111,0.1);transition:border-color .2s,box-shadow .2s;align-self:flex-start}
   .pie-detail-ey{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--s);margin-bottom:10px;opacity:0;transition:opacity .3s}
   .pie-detail-name{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:400;color:var(--vs);margin-bottom:14px;line-height:1.2}
   .pie-detail-desc{font-size:0.93rem;font-weight:300;color:var(--t);line-height:1.75}
   .pie-detail--active{border-color:rgba(74,124,111,0.3);box-shadow:0 8px 36px rgba(74,124,111,0.16)}
-  .pie-detail-body{position:relative;min-height:190px;max-height:460px;overflow-y:auto;scroll-behavior:smooth}
-  .pie-detail-body::-webkit-scrollbar{width:4px}
-  .pie-detail-body::-webkit-scrollbar-track{background:transparent}
-  .pie-detail-body::-webkit-scrollbar-thumb{background:rgba(74,124,111,0.3);border-radius:4px}
+  .pie-detail-body{min-height:320px;height:auto;overflow:visible;transition:opacity 150ms ease-out}
+  .pie-detail-body.fading{opacity:0}
   .pie-detail-desc p{margin-bottom:8px}
   .pie-detail-desc p.pie-desc-sub{font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--s);margin:12px 0 6px;font-weight:500}
   .pie-detail-desc ul{margin:4px 0 0;padding-left:16px;list-style:disc}
   .pie-detail-desc li{margin-bottom:9px;line-height:1.65}
   .pie-detail-desc strong{font-weight:500;color:var(--vs)}
-  /* Detail card: fade + traslazione 250ms */
-  .pie-detail-slot{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 250ms ease-out,transform 250ms ease-out}
-  .pie-detail-slot.is-visible{opacity:1;position:relative;pointer-events:auto;transform:translateY(0)}
+  /* Animazione fade-in testo quando appare */
+  .pie-detail-name,.pie-detail-desc{transition:opacity 200ms ease-out}
   /* Spicchi: animazione elegante click + hover */
   .pie-g{cursor:pointer;outline:none;transform-box:view-box;transform-origin:250px 250px;transition:opacity 300ms cubic-bezier(0.4,0,0.2,1)}
   .pie-g path{
@@ -598,15 +595,9 @@
     </div>
     <div class="pie-detail" id="pie-detail">
       <div class="pie-detail-ey" id="pie-ey">Servizio selezionato</div>
-      <div class="pie-detail-body">
-        <div class="pie-detail-slot is-visible" id="pie-slot-a">
-          <div class="pie-detail-name">I nostri servizi</div>
-          <div class="pie-detail-desc">Tocca uno spicchio o una pill qui sotto per scoprire i dettagli di ogni prestazione.</div>
-        </div>
-        <div class="pie-detail-slot" id="pie-slot-b" aria-hidden="true">
-          <div class="pie-detail-name"></div>
-          <div class="pie-detail-desc"></div>
-        </div>
+      <div class="pie-detail-body" id="pie-detail-body">
+        <div class="pie-detail-name" id="pie-slot-name">I nostri servizi</div>
+        <div class="pie-detail-desc" id="pie-slot-desc">Tocca uno spicchio per scoprire i dettagli di ogni prestazione.</div>
       </div>
     </div>
   </div>
@@ -718,25 +709,27 @@
     ];
 
     var _active = -1;
-    var _visibleSlot = 'a';
+    var _fadeTimer = null;
 
     function qs(id){ return document.getElementById(id); }
 
     function showInSlot(name, desc){
-      var next = _visibleSlot === 'a' ? 'b' : 'a';
-      var cur  = qs('pie-slot-' + _visibleSlot);
-      var nxt  = qs('pie-slot-' + next);
-      nxt.querySelector('.pie-detail-name').textContent = name;
-      nxt.querySelector('.pie-detail-desc').innerHTML = desc;
-      requestAnimationFrame(function(){
-        requestAnimationFrame(function(){
-          nxt.classList.add('is-visible');
-          cur.classList.remove('is-visible');
-          nxt.removeAttribute('aria-hidden');
-          cur.setAttribute('aria-hidden', 'true');
-          _visibleSlot = next;
-        });
-      });
+      var body = qs('pie-detail-body');
+      if(!body) return;
+      /* Cancella eventuali timer pendenti (click rapidi) */
+      if(_fadeTimer){ clearTimeout(_fadeTimer); _fadeTimer = null; }
+      /* Fase 1: fade out (150ms) */
+      body.classList.add('fading');
+      _fadeTimer = setTimeout(function(){
+        /* Fase 2: aggiorna contenuto */
+        var nameEl = body.querySelector('.pie-detail-name');
+        var descEl = body.querySelector('.pie-detail-desc');
+        if(nameEl) nameEl.textContent = name;
+        if(descEl) descEl.innerHTML = desc;
+        /* Fase 3: fade in */
+        body.classList.remove('fading');
+        _fadeTimer = null;
+      }, 150);
     }
 
     function activate(i){
