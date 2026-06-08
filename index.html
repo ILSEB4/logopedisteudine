@@ -231,7 +231,15 @@
   .pie-detail-name{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:400;color:var(--vs);margin-bottom:14px;line-height:1.2}
   .pie-detail-desc{font-size:0.93rem;font-weight:300;color:var(--t);line-height:1.75}
   .pie-detail--active{border-color:rgba(74,124,111,0.3);box-shadow:0 8px 36px rgba(74,124,111,0.16)}
-  .pie-detail-body{position:relative;min-height:190px}
+  .pie-detail-body{position:relative;min-height:190px;max-height:460px;overflow-y:auto;scroll-behavior:smooth}
+  .pie-detail-body::-webkit-scrollbar{width:4px}
+  .pie-detail-body::-webkit-scrollbar-track{background:transparent}
+  .pie-detail-body::-webkit-scrollbar-thumb{background:rgba(74,124,111,0.3);border-radius:4px}
+  .pie-detail-desc p{margin-bottom:8px}
+  .pie-detail-desc p.pie-desc-sub{font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--s);margin:12px 0 6px;font-weight:500}
+  .pie-detail-desc ul{margin:4px 0 0;padding-left:16px;list-style:disc}
+  .pie-detail-desc li{margin-bottom:9px;line-height:1.65}
+  .pie-detail-desc strong{font-weight:500;color:var(--vs)}
   /* Detail card: fade + traslazione 250ms */
   .pie-detail-slot{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 250ms ease-out,transform 250ms ease-out}
   .pie-detail-slot.is-visible{opacity:1;position:relative;pointer-events:auto;transform:translateY(0)}
@@ -315,8 +323,13 @@
       transition:max-height 350ms cubic-bezier(0.4,0,0.2,1),opacity 250ms cubic-bezier(0.4,0,0.2,1);
       overflow:hidden;
     }
-    .srv-mobile-item.is-open .srv-mobile-body{max-height:600px;opacity:1}
+    .srv-mobile-item.is-open .srv-mobile-body{max-height:1600px;opacity:1}
     .srv-mobile-desc{padding:0 20px 20px;font-size:15px;line-height:1.6;color:var(--t);font-weight:300}
+    .srv-mobile-desc p{margin-bottom:6px}
+    .srv-mobile-desc p.pie-desc-sub{font-size:0.75rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--s);margin:10px 0 5px;font-weight:500}
+    .srv-mobile-desc ul{margin:4px 0 0;padding-left:18px;list-style:disc}
+    .srv-mobile-desc li{margin-bottom:8px;line-height:1.6}
+    .srv-mobile-desc strong{font-weight:500;color:var(--vs)}
     /* Etichette ruota su mobile (regola pre-esistente, ora ininfluente perché ruota nascosta) */
     .pie-g text{font-size:11px}
   }
@@ -479,11 +492,11 @@
     </a>
     <a href="monica.html" class="team-card">
       <div class="team-card-top" style="background:var(--vs);">
-        <img src="monica.jpg" alt="Monica Salvadori Cavazzon, logopedista e musicoterapeuta" loading="lazy" decoding="async" width="600" height="750" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;border-radius:0;">
+        <img src="monica.jpg" alt="Monica Salvadori Cavazzon, logopedista, vocologa clinica e musicoterapeuta" loading="lazy" decoding="async" width="600" height="750" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;border-radius:0;">
       </div>
       <div class="team-card-body">
         <div class="team-card-name">Monica Salvadori Cavazzon</div>
-        <div class="team-card-role">Logopedista · Musicoterapeuta</div>
+        <div class="team-card-role">Logopedista · Vocologa Clinica · Musicoterapeuta</div>
         <p class="team-card-desc">Oltre vent'anni di esperienza clinica. Specializzata in riabilitazione vocale, disfagia e patologie neurologiche. Lavora al CODRAL dell'Ospedale di Udine. Fondatrice della Corale Gioconda.</p>
         <span class="team-card-link">Scopri il profilo</span>
       </div>
@@ -522,13 +535,14 @@
             </text>
           </g>
 
-          <!-- Slice 2: Squilibrio oro-facciale / deglutizione disfunzionale — oro -->
+          <!-- Slice 2: Squilibrio oro-facciale (SMOF) / deglutizione disfunzionale — oro -->
           <g class="pie-g" data-slice="2">
             <path d="M488.86 304.52 A245 245 0 0 1 356.30 470.74 L281.24 314.87 A72 72 0 0 0 320.19 266.02 Z"
                   fill="#C9A96E" stroke="#FBFAF7" stroke-width="2" stroke-linejoin="round" pointer-events="all"/>
-            <text text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" font-weight="500" fill="#2C4A43" pointer-events="none">
-              <tspan x="368.84" y="335.77">Squilibrio</tspan>
-              <tspan x="368.84" dy="16">oro-facciale</tspan>
+            <text text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="500" fill="#2C4A43" pointer-events="none">
+              <tspan x="368.84" y="325.77">Squilibrio</tspan>
+              <tspan x="368.84" dy="14">oro-facciale</tspan>
+              <tspan x="368.84" dy="14">(SMOF)</tspan>
             </text>
           </g>
 
@@ -550,12 +564,13 @@
             </text>
           </g>
 
-          <!-- Slice 5: Parkinson — verde chiaro -->
+          <!-- Slice 5: Malattia di Parkinson — verde chiaro -->
           <g class="pie-g" data-slice="5">
             <path d="M11.14 304.52 A245 245 0 0 1 58.45 97.24 L193.71 205.11 A72 72 0 0 0 179.81 266.02 Z"
                   fill="#8BB5AB" stroke="#FBFAF7" stroke-width="2" stroke-linejoin="round" pointer-events="all"/>
-            <text text-anchor="middle" font-family="Outfit,sans-serif" font-size="14" font-weight="500" fill="#2C4A43" pointer-events="none">
-              <tspan x="101.81" y="220">Parkinson</tspan>
+            <text text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="500" fill="#2C4A43" pointer-events="none">
+              <tspan x="101.81" y="211">Malattia di</tspan>
+              <tspan x="101.81" dy="15">Parkinson</tspan>
             </text>
           </g>
 
@@ -602,7 +617,7 @@
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-0" role="region">
-        <div class="srv-mobile-desc">Percorsi dedicati ai bambini che iniziano a parlare più tardi, con vocabolario ridotto o difficoltà nel formulare frasi e comunicare i propri bisogni. La valutazione logopedica osserva lo sviluppo della comunicazione e, se necessario, avvia un percorso di stimolazione personalizzato per favorire una crescita comunicativo-linguistica adeguata.</div>
+        <div class="srv-mobile-desc">Valutazione e riabilitazione per bambini che presentano ritardo nello sviluppo del linguaggio o difficoltà nella comprensione e/o produzione verbale. L'intervento è rivolto ai bambini che iniziano a parlare più tardi, utilizzano un vocabolario ridotto e/o faticano a formulare frasi adeguate all'età o a comunicare efficacemente.</div>
       </div>
     </li>
     <li class="srv-mobile-item">
@@ -612,17 +627,17 @@
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-1" role="region">
-        <div class="srv-mobile-desc">Percorsi di valutazione e riabilitazione delle abilità articolatorie attraverso attività ed esercizi mirati, con l'obiettivo di favorire l'acquisizione e l'automatizzazione della corretta produzione dei suoni.</div>
+        <div class="srv-mobile-desc">Valutazione e riabilitazione delle abilità articolatorie in bambini, adolescenti e adulti che presentano difficoltà nella corretta produzione dei suoni del linguaggio, quali sostituzioni, omissioni o distorsioni (ad esempio rotacismi e sigmatismi).</div>
       </div>
     </li>
     <li class="srv-mobile-item">
       <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-2">
         <span class="srv-mobile-dot" style="background:#C9A96E"></span>
-        <span class="srv-mobile-name">Squilibrio muscolare oro-facciale e deglutizione disfunzionale</span>
+        <span class="srv-mobile-name">Squilibrio muscolare oro-facciale (SMOF) e deglutizione disfunzionale</span>
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-2" role="region">
-        <div class="srv-mobile-desc">Percorsi per chi presenta uno squilibrio della muscolatura oro-facciale che può manifestarsi con difficoltà nella respirazione, masticazione, deglutizione e articolazione. Un intervento precoce può prevenire compensi posturali e disfunzioni a lungo termine.</div>
+        <div class="srv-mobile-desc">Percorsi di valutazione e riabilitazione rivolti a bambini, adolescenti e adulti che presentano alterazioni dell'equilibrio della muscolatura oro-facciale e delle funzioni correlate, quali respirazione, masticazione, deglutizione e articolazione. Il trattamento comprende inoltre la presa in carico dei vizi orali (suzione del pollice, uso prolungato del ciuccio e altre abitudini orali disfunzionali), con l'obiettivo di favorire un corretto equilibrio funzionale del sistema oro-facciale.</div>
       </div>
     </li>
     <li class="srv-mobile-item">
@@ -632,7 +647,7 @@
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-3" role="region">
-        <div class="srv-mobile-desc">Percorsi riabilitativi mirati al miglioramento della sicurezza e dell'efficacia della deglutizione, attraverso esercizi e strategie personalizzate che supportano la funzionalità delle strutture orali e promuovono un'alimentazione sicura in pazienti anziani, neurologici e sottoposti a chirurgia testa-collo.</div>
+        <div class="srv-mobile-desc">Valutazione e riabilitazione mirate al miglioramento della sicurezza e dell'efficacia della deglutizione, attraverso esercizi e strategie personalizzate che supportano la funzionalità delle strutture orali e promuovono un'alimentazione sicura in pazienti anziani, neurologici e sottoposti a chirurgia testa-collo.</div>
       </div>
     </li>
     <li class="srv-mobile-item">
@@ -642,17 +657,28 @@
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-4" role="region">
-        <div class="srv-mobile-desc">Percorsi personalizzati di valutazione e riabilitazione della voce, combinando tecniche cliniche e funzionali per migliorare qualità, efficacia e resistenza vocale.</div>
+        <div class="srv-mobile-desc">
+          <p>Valutazione, prevenzione e riabilitazione dei disturbi della voce rivolta a bambini, adolescenti e adulti.</p>
+          <p class="pie-desc-sub">Ci occupiamo di:</p>
+          <ul>
+            <li><strong>Disfonie disfunzionali:</strong> alterazioni della voce in assenza di lesioni delle corde vocali, correlate a un uso scorretto, eccessivo o inefficiente della voce.</li>
+            <li><strong>Disfonie organiche benigne:</strong> disturbi vocali associati a modificazioni strutturali delle corde vocali, quali noduli, polipi, edema di Reinke, cisti e altre lesioni benigne.</li>
+            <li><strong>Disfonie post-chirurgiche</strong> finalizzate al recupero della migliore funzione vocale possibile.</li>
+            <li><strong>Paralisi e paresi cordali.</strong></li>
+            <li><strong>Disfonie neurologiche.</strong></li>
+            <li><strong>Disfonie professionali, prevenzione e igiene vocale:</strong> valutazione, consulenza e training vocale dedicati a chi utilizza la voce in ambito professionale. Il percorso mira a ottimizzare la performance vocale, favorire un utilizzo efficiente della voce, prevenire l'insorgenza di problematiche vocali e ridurre il rischio di malmenage e surmenage vocale.</li>
+          </ul>
+        </div>
       </div>
     </li>
     <li class="srv-mobile-item">
       <button type="button" class="srv-mobile-head" aria-expanded="false" aria-controls="srv-m-5">
         <span class="srv-mobile-dot" style="background:#8BB5AB"></span>
-        <span class="srv-mobile-name">Parkinson</span>
+        <span class="srv-mobile-name">Malattia di Parkinson</span>
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-5" role="region">
-        <div class="srv-mobile-desc">Trattamento mirato della voce e della comunicazione nei pazienti con malattia di Parkinson, attraverso approcci riabilitativi specifici basati sull'evidenza.</div>
+        <div class="srv-mobile-desc">Valutazione e trattamento dei disturbi della voce, della parola e della comunicazione associati alla malattia di Parkinson. L'intervento si avvale di metodiche riabilitative specifiche, tra cui il protocollo LSVT LOUD®, con l'obiettivo di incrementare l'intensità vocale, migliorare l'intelligibilità dell'eloquio e favorire una comunicazione più efficace nelle attività quotidiane.</div>
       </div>
     </li>
     <li class="srv-mobile-item">
@@ -662,7 +688,7 @@
         <span class="srv-mobile-chev" aria-hidden="true">▾</span>
       </button>
       <div class="srv-mobile-body" id="srv-m-6" role="region">
-        <div class="srv-mobile-desc">Percorso di valutazione dei disturbi di linguaggio e di articolazione acquisiti nel paziente neurologico adulto.</div>
+        <div class="srv-mobile-desc">Valutazione e riabilitazione dei disturbi acquisiti del linguaggio, della parola e dell'articolazione nel paziente adulto, in seguito a ictus, trauma cranico o altre patologie neurologiche.</div>
       </div>
     </li>
   </ul>
@@ -673,20 +699,20 @@
     var _pieNames = [
       "Ritardi e disturbi del linguaggio in età evolutiva",
       "Disturbi di articolazione",
-      "Squilibrio muscolare oro-facciale e deglutizione disfunzionale",
+      "Squilibrio muscolare oro-facciale (SMOF) e deglutizione disfunzionale",
       "Disfagia",
       "Disfonia",
-      "Parkinson",
+      "Malattia di Parkinson",
       "Afasia e disartria"
     ];
     var _pieDescs = [
-      "Percorsi dedicati ai bambini che iniziano a parlare più tardi, con vocabolario ridotto o difficoltà nel formulare frasi e comunicare i propri bisogni. La valutazione logopedica osserva lo sviluppo della comunicazione e, se necessario, avvia un percorso di stimolazione personalizzato per favorire una crescita comunicativo-linguistica adeguata.",
-      "Percorsi di valutazione e riabilitazione delle abilità articolatorie attraverso attività ed esercizi mirati, con l'obiettivo di favorire l'acquisizione e l'automatizzazione della corretta produzione dei suoni.",
-      "Percorsi per chi presenta uno squilibrio della muscolatura oro-facciale che può manifestarsi con difficoltà nella respirazione, masticazione, deglutizione e articolazione. Un intervento precoce può prevenire compensi posturali e disfunzioni a lungo termine.",
-      "Percorsi riabilitativi mirati al miglioramento della sicurezza e dell'efficacia della deglutizione, attraverso esercizi e strategie personalizzate che supportano la funzionalità delle strutture orali e promuovono un'alimentazione sicura in pazienti anziani, neurologici e sottoposti a chirurgia testa-collo.",
-      "Percorsi personalizzati di valutazione e riabilitazione della voce, combinando tecniche cliniche e funzionali per migliorare qualità, efficacia e resistenza vocale.",
-      "Trattamento mirato della voce e della comunicazione nei pazienti con malattia di Parkinson, attraverso approcci riabilitativi specifici basati sull'evidenza.",
-      "Percorso di valutazione dei disturbi di linguaggio e di articolazione acquisiti nel paziente neurologico adulto."
+      "Valutazione e riabilitazione per bambini che presentano ritardo nello sviluppo del linguaggio o difficoltà nella comprensione e/o produzione verbale. L’intervento è rivolto ai bambini che iniziano a parlare più tardi, utilizzano un vocabolario ridotto e/o faticano a formulare frasi adeguate all’età o a comunicare efficacemente.",
+      "Valutazione e riabilitazione delle abilità articolatorie in bambini, adolescenti e adulti che presentano difficoltà nella corretta produzione dei suoni del linguaggio, quali sostituzioni, omissioni o distorsioni (ad esempio rotacismi e sigmatismi).",
+      "Percorsi di valutazione e riabilitazione rivolti a bambini, adolescenti e adulti che presentano alterazioni dell’equilibrio della muscolatura oro-facciale e delle funzioni correlate, quali respirazione, masticazione, deglutizione e articolazione. Il trattamento comprende inoltre la presa in carico dei vizi orali (suzione del pollice, uso prolungato del ciuccio e altre abitudini orali disfunzionali), con l’obiettivo di favorire un corretto equilibrio funzionale del sistema oro-facciale.",
+      "Valutazione e riabilitazione mirate al miglioramento della sicurezza e dell’efficacia della deglutizione, attraverso esercizi e strategie personalizzate che supportano la funzionalità delle strutture orali e promuovono un’alimentazione sicura in pazienti anziani, neurologici e sottoposti a chirurgia testa-collo.",
+      "Valutazione, prevenzione e riabilitazione dei disturbi della voce rivolta a bambini, adolescenti e adulti.<p class=\"pie-desc-sub\">Ci occupiamo di:</p><ul><li><strong>Disfonie disfunzionali:</strong> alterazioni della voce in assenza di lesioni delle corde vocali, correlate a un uso scorretto, eccessivo o inefficiente della voce.</li><li><strong>Disfonie organiche benigne:</strong> disturbi vocali associati a modificazioni strutturali delle corde vocali, quali noduli, polipi, edema di Reinke, cisti e altre lesioni benigne.</li><li><strong>Disfonie post-chirurgiche</strong> finalizzate al recupero della migliore funzione vocale possibile.</li><li><strong>Paralisi e paresi cordali.</strong></li><li><strong>Disfonie neurologiche.</strong></li><li><strong>Disfonie professionali, prevenzione e igiene vocale:</strong> valutazione, consulenza e training vocale dedicati a chi utilizza la voce in ambito professionale. Il percorso mira a ottimizzare la performance vocale, favorire un utilizzo efficiente della voce, prevenire l’insorgenza di problematiche vocali e ridurre il rischio di malmenage e surmenage vocale.</li></ul>",
+      "Valutazione e trattamento dei disturbi della voce, della parola e della comunicazione associati alla malattia di Parkinson. L’intervento si avvale di metodiche riabilitative specifiche, tra cui il protocollo LSVT LOUD®, con l’obiettivo di incrementare l’intensità vocale, migliorare l’intelligibilità dell’eloquio e favorire una comunicazione più efficace nelle attività quotidiane.",
+      "Valutazione e riabilitazione dei disturbi acquisiti del linguaggio, della parola e dell’articolazione nel paziente adulto, in seguito a ictus, trauma cranico o altre patologie neurologiche."
     ];
 
     var _active = -1;
@@ -699,7 +725,7 @@
       var cur  = qs('pie-slot-' + _visibleSlot);
       var nxt  = qs('pie-slot-' + next);
       nxt.querySelector('.pie-detail-name').textContent = name;
-      nxt.querySelector('.pie-detail-desc').textContent = desc;
+      nxt.querySelector('.pie-detail-desc').innerHTML = desc;
       requestAnimationFrame(function(){
         requestAnimationFrame(function(){
           nxt.classList.add('is-visible');
