@@ -39,15 +39,15 @@
   .nav-back::before{content:'←';font-size:1rem}
 
   /* HERO — layout stile jovana: foto a sx 50%, contenuto a dx 50% */
-  .hero{display:grid;grid-template-columns:50% 50%;min-height:100vh;min-height:100svh;padding-top:64px}
+  .hero{display:grid;grid-template-columns:45% 55%;height:720px;min-height:680px;max-height:760px;padding-top:64px;align-items:stretch}
   .hero-foto{position:relative;overflow:hidden;background:var(--vs)}
-  .hero-foto img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+  .hero-foto img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
   .hero-foto::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 70%,rgba(44,74,67,0.15) 100%)}
-  .hero-foto-quote{position:absolute;bottom:0;left:0;right:0;padding:32px 36px;background:linear-gradient(transparent,rgba(44,74,67,0.85));z-index:2}
-  .hero-foto-quote-text{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:rgba(247,243,236,0.9);line-height:1.5;margin-bottom:6px}
-  .hero-foto-quote-attr{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(201,169,110,0.8)}
+  .hero-foto-quote{position:absolute;bottom:0;left:0;right:0;padding:22px 26px;background:linear-gradient(transparent,rgba(44,74,67,0.88));z-index:2}
+  .hero-foto-quote-text{font-family:'Playfair Display',serif;font-size:0.9rem;font-style:italic;color:rgba(247,243,236,0.9);line-height:1.45;margin-bottom:5px}
+  .hero-foto-quote-attr{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(201,169,110,0.8)}
 
-  .hero-r{display:flex;flex-direction:column;justify-content:center;padding:72px 64px 72px 56px;background:var(--bg);position:relative}
+  .hero-r{display:flex;flex-direction:column;justify-content:center;padding:48px 60px 48px 52px;background:var(--bg);position:relative}
   .eyebrow{display:flex;align-items:center;gap:10px;font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--s);margin-bottom:14px}
   .eyebrow::before{content:'';width:18px;height:1px;background:var(--s)}
   h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.2vw,3rem);font-weight:400;line-height:1.1;color:var(--vs);margin-bottom:10px;letter-spacing:-0.01em}
@@ -155,9 +155,10 @@
 
   @media(max-width:960px){
     nav{padding:0 24px}
-    .hero{grid-template-columns:1fr}
-    .hero-foto{min-height:320px}
-    .hero-r{padding:48px 24px}
+    .hero{grid-template-columns:1fr;height:auto;min-height:auto;max-height:none}
+    .hero-foto{height:480px}
+    .hero-foto img{object-position:center 15%}
+    .hero-r{padding:40px 24px}
     .s,.corale,.srv-section,.citazione,.ctc{padding:60px 24px}
     .chi-grid,.form-grid,.corale-inner{grid-template-columns:1fr;gap:36px}
     .ctc-cards{grid-template-columns:1fr}
@@ -218,7 +219,7 @@
   <div class="hero-foto">
     <img src="monica.jpg" alt="Monica Salvadori Cavazzon — Logopedista, Vocologa Clinica e Musicoterapeuta" loading="lazy" decoding="async" width="800" height="1000">
     <div class="hero-foto-quote">
-      <div class="hero-foto-quote-text">"Credo in un approccio riabilitativo che unisca competenza clinica, ascolto e attenzione alla specificità di ogni persona."</div>
+      <div class="hero-foto-quote-text">"La voce è il riflesso della persona: prendersene cura è restituire alla persona la possibilità di esprimere chi è."</div>
       <div class="hero-foto-quote-attr">— Monica Salvadori Cavazzon</div>
     </div>
   </div>
