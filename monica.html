@@ -57,8 +57,9 @@
   .hero-intro strong{font-weight:500;color:var(--t)}
   .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
   .tag{display:inline-flex;align-items:center;gap:6px;background:var(--vc);color:var(--vs);font-size:0.72rem;font-weight:500;letter-spacing:0.05em;padding:6px 14px;border-radius:100px}
-  .btn-contatta{display:inline-flex;align-items:center;gap:10px;background:var(--v);color:#fff;padding:13px 28px;border-radius:100px;text-decoration:none;font-size:0.82rem;font-weight:500;transition:background .2s;width:fit-content}
-  .btn-contatta:hover{background:var(--vs)}
+  .btn-contatta{display:inline-flex;align-items:center;gap:6px;font-size:0.74rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--vm);text-decoration:none;transition:gap .2s}
+  .btn-contatta::after{content:'→'}
+  .btn-contatta:hover{gap:10px}
 
   /* SEZIONI */
   .s{padding:64px 64px}
@@ -133,8 +134,8 @@
   .ctc-card-link{display:inline-flex;align-items:center;gap:6px;font-size:0.74rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--vm);text-decoration:none;transition:gap .2s}
   .ctc-card-link:hover{gap:10px}
   .ctc-card-link::after{content:'→'}
-  a[href^="tel:"],a[href^="mailto:"]{color:inherit;text-decoration:none;transition:opacity 200ms ease}
-  a[href^="tel:"]:hover,a[href^="mailto:"]:hover{opacity:.7}
+  a[href^="tel:"]:not(.btn-contatta):not(.ctc-card-link),a[href^="mailto:"]:not(.btn-contatta):not(.ctc-card-link){color:inherit;text-decoration:none;transition:opacity 200ms ease}
+  a[href^="tel:"]:not(.btn-contatta):not(.ctc-card-link):hover,a[href^="mailto:"]:not(.btn-contatta):not(.ctc-card-link):hover{opacity:.7}
   .ctc-note{margin-top:32px;font-size:0.85rem;font-weight:300;color:rgba(200,221,217,0.5);line-height:1.7;max-width:500px}
 
   /* FOOTER */
