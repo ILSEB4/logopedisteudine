@@ -229,12 +229,12 @@
   .pie-ratio svg{width:100%;height:auto;display:block;overflow:visible;
                  touch-action:manipulation;-webkit-tap-highlight-color:transparent}
   .pie-hint{display:none;text-align:center;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--tl);margin-top:12px}
-  .pie-detail{flex-shrink:0;width:360px;max-width:360px;background:var(--w);border-radius:16px;padding:28px 28px;border:1px solid rgba(74,124,111,0.14);box-shadow:0 6px 28px rgba(74,124,111,0.1);transition:border-color .2s,box-shadow .2s;align-self:flex-start}
+  .pie-detail{flex-shrink:0;width:360px;max-width:360px;background:var(--w);border-radius:16px;padding:28px 28px;border:1px solid rgba(74,124,111,0.14);box-shadow:0 6px 28px rgba(74,124,111,0.1);transition:border-color .2s,box-shadow .2s}
   .pie-detail-ey{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--s);margin-bottom:10px;opacity:0;transition:opacity .3s}
   .pie-detail-name{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:400;color:var(--vs);margin-bottom:14px;line-height:1.2}
   .pie-detail-desc{font-size:0.93rem;font-weight:300;color:var(--t);line-height:1.75}
   .pie-detail--active{border-color:rgba(74,124,111,0.3);box-shadow:0 8px 36px rgba(74,124,111,0.16)}
-  .pie-detail-body{min-height:320px;height:auto;overflow:visible;transition:opacity 150ms ease-out}
+  .pie-detail-body{height:520px;min-height:520px;max-height:520px;overflow:hidden;transition:opacity 150ms ease-out}
   .pie-detail-body.fading{opacity:0}
   .pie-detail-desc p{margin-bottom:8px}
   .pie-detail-desc p.pie-desc-sub{font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--s);margin:12px 0 6px;font-weight:500}
@@ -339,6 +339,7 @@
     .pie-chart-container{width:100%;max-width:min(420px,90vw);margin:0 auto;aspect-ratio:1/1}
     .pie-hint{display:block}
     .pie-detail{width:100%;max-width:480px;margin:0 auto}
+    .pie-detail-body{height:auto;min-height:200px;max-height:none;overflow:visible}
     .pie-detail-name{font-size:1.15rem}
     .pie-g path{stroke-width:3}
     .pie-g.is-active path{stroke-width:4.5;transform:scale(1.06)}
