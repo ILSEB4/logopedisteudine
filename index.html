@@ -287,6 +287,14 @@
   .prj-info-row span.prj-info-lbl{color:var(--tl);min-width:96px;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;padding-top:3px;font-weight:500;flex-shrink:0}
   .prj-info-row a{color:var(--v);text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.3);transition:color .2s,border-color .2s}
   .prj-info-row a:hover{color:var(--vs);border-color:var(--vs)}
+  /* Accordion Corale Gioconda */
+  .corale-accordion-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:28px;padding:14px 20px;background:var(--vs);color:var(--cr);border:none;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.04em;cursor:pointer;min-height:48px;transition:background .2s;text-align:left}
+  .corale-accordion-btn:hover{background:#1e3530}
+  .corale-accordion-arrow{flex-shrink:0;transition:transform 300ms ease;font-size:0.85rem;opacity:0.7}
+  .corale-accordion-arrow.open{transform:rotate(180deg)}
+  .corale-accordion-content{max-height:0;overflow:hidden;transition:max-height 350ms cubic-bezier(0.4,0,0.2,1)}
+  .corale-accordion-content.open{max-height:700px}
+  .corale-accordion-content .prj-info{margin-top:12px}
   @media(max-width:960px){
     .prj-head{grid-template-columns:1fr;gap:16px}
   }
@@ -875,18 +883,24 @@
       <p>La Corale Gioconda è coordinata e diretta fin dalla sua nascita dalla logopedista Monica Salvadori Cavazzon, ideatrice anche del progetto.</p>
     </div>
 
-    <div class="prj-info">
-      <div class="prj-info-title">Per ulteriori informazioni</div>
-      <div class="prj-info-rows">
-        <div class="prj-info-row"><span class="prj-info-lbl">Ente</span><span>CORALE GIOCONDA – UDINE - O.D.V.</span></div>
-        <div class="prj-info-row"><span class="prj-info-lbl">Sede</span><span>33100 Udine, Via Gervasutta 48 — c/o Istituto di Medicina Fisica e Riabilitazione</span></div>
-        <div class="prj-info-row"><span class="prj-info-lbl">Iscritta</span><span>R.U.N.T.S.</span></div>
-        <div class="prj-info-row"><span class="prj-info-lbl">C.F.</span><span>94091830300</span></div>
-        <div class="prj-info-row"><span class="prj-info-lbl">IBAN</span><span>IT62P0306912344100000066038</span></div>
-        <div class="prj-info-row"><span class="prj-info-lbl">PEC</span><a href="mailto:coralegiocondaodv@pec.it">coralegiocondaodv@pec.it</a></div>
-        <div class="prj-info-row"><span class="prj-info-lbl">Email</span><a href="mailto:coralegiocondaodv@gmail.com">coralegiocondaodv@gmail.com</a></div>
-        <div class="prj-info-row"><span class="prj-info-lbl">Telefono</span><span><a href="tel:+393452444948">345 244 4948</a> – <a href="tel:+393388759256">338 875 9256</a></span></div>
-        <div class="prj-info-row"><span class="prj-info-lbl">Sito web</span><a href="http://www.coralegioconda.org" target="_blank" rel="noopener">www.coralegioconda.org</a></div>
+    <button class="corale-accordion-btn" aria-expanded="false">
+      Informazioni e contatti Corale Gioconda
+      <svg class="corale-accordion-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="corale-accordion-content" aria-hidden="true">
+      <div class="prj-info">
+        <div class="prj-info-title">Per ulteriori informazioni</div>
+        <div class="prj-info-rows">
+          <div class="prj-info-row"><span class="prj-info-lbl">Ente</span><span>CORALE GIOCONDA – UDINE - O.D.V.</span></div>
+          <div class="prj-info-row"><span class="prj-info-lbl">Sede</span><span>33100 Udine, Via Gervasutta 48 — c/o Istituto di Medicina Fisica e Riabilitazione</span></div>
+          <div class="prj-info-row"><span class="prj-info-lbl">Iscritta</span><span>R.U.N.T.S.</span></div>
+          <div class="prj-info-row"><span class="prj-info-lbl">C.F.</span><span>94091830300</span></div>
+          <div class="prj-info-row"><span class="prj-info-lbl">IBAN</span><span>IT62P0306912344100000066038</span></div>
+          <div class="prj-info-row"><span class="prj-info-lbl">PEC</span><a href="mailto:coralegiocondaodv@pec.it">coralegiocondaodv@pec.it</a></div>
+          <div class="prj-info-row"><span class="prj-info-lbl">Email</span><a href="mailto:coralegiocondaodv@gmail.com">coralegiocondaodv@gmail.com</a></div>
+          <div class="prj-info-row"><span class="prj-info-lbl">Telefono</span><span><a href="tel:+393452444948">345 244 4948</a> – <a href="tel:+393388759256">338 875 9256</a></span></div>
+          <div class="prj-info-row"><span class="prj-info-lbl">Sito web</span><a href="http://www.coralegioconda.org" target="_blank" rel="noopener">www.coralegioconda.org</a></div>
+        </div>
       </div>
     </div>
   </article>
@@ -1103,6 +1117,20 @@ document.addEventListener('keydown', function(e){
     });
   }
 });
+</script>
+<script>
+(function(){
+  var btn = document.querySelector('.corale-accordion-btn');
+  var content = document.querySelector('.corale-accordion-content');
+  var arrow = document.querySelector('.corale-accordion-arrow');
+  if(!btn || !content || !arrow) return;
+  btn.addEventListener('click', function(){
+    var isOpen = content.classList.toggle('open');
+    arrow.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    content.setAttribute('aria-hidden', !isOpen);
+  });
+})();
 </script>
 </body>
 </html>
