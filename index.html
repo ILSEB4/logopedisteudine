@@ -963,7 +963,7 @@
           referrerpolicy="no-referrer-when-downgrade"
           title="Mappa di ComuniCare Logopediste Udine — Via Bertaldia 91"></iframe>
       </div>
-      <a href="https://maps.google.com/maps?q=Via+Bertaldia+91,+33100+Udine+UD" class="map-cta" id="map-open-btn">Apri in Google Maps <span aria-hidden="true">→</span></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Via%20Bertaldia%2091%2033100%20Udine%20UD" rel="noopener" class="map-cta">Apri in Google Maps <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -1119,18 +1119,6 @@ document.addEventListener('keydown', function(e){
 });
 </script>
 <script>
-(function(){
-  var mapBtn = document.getElementById('map-open-btn');
-  if(!mapBtn) return;
-  mapBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    var url = isIOS
-      ? 'https://maps.apple.com/?q=Via+Bertaldia+91,+33100+Udine+UD'
-      : 'https://maps.google.com/maps?q=Via+Bertaldia+91,+33100+Udine+UD';
-    window.location.href = url;
-  });
-})();
 (function(){
   var btn = document.querySelector('.corale-accordion-btn');
   var content = document.querySelector('.corale-accordion-content');
