@@ -1,0 +1,21 @@
+Font utilizzati dal sito
+========================
+
+I file .woff2 di questa cartella provengono da Google Fonts (fonts.google.com)
+e sono ospitati direttamente sul sito, senza collegamenti ai server di Google.
+
+- Playfair Display
+  Copyright 2017 The Playfair Display Project Authors
+  (https://github.com/clauseggers/Playfair-Display),
+  with Reserved Font Name "Playfair Display".
+
+- Outfit
+  Copyright 2021 The Outfit Project Authors
+  (https://github.com/Outfitio/Outfit-Fonts)
+
+Entrambi i font sono distribuiti con licenza SIL Open Font License, versione 1.1,
+che ne consente l'uso, la copia e la ridistribuzione, anche su siti web:
+https://openfontlicense.org
+
+Le note di copyright e il riferimento alla licenza sono inclusi anche nei metadati
+di ciascun file .woff2 (non modificati).

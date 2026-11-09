@@ -6,9 +6,7 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FBFAF7">
 <title>ComuniCare – Logopediste a Udine | Jovana Ikač e Monica Salvadori Cavazzon</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="canonical" href="https://logopedisteudine.it">
  <meta name="description" content="ComuniCare è il centro di logopedia a Udine di Jovana Ikač e Monica Salvadori Cavazzon. Valutazione e riabilitazione di voce, linguaggio e deglutizione per bambini e adulti.">
 <meta name="format-detection" content="telephone=no,email=no">
@@ -152,6 +150,24 @@
   .map-wrap{display:flex;flex-direction:column;gap:14px}
   .map-box{position:relative;border-radius:16px;overflow:hidden;height:480px;box-shadow:0 6px 24px rgba(74,124,111,0.12);border:1px solid rgba(74,124,111,0.15);background:var(--vc)}
   .map-box iframe{display:block;width:100%;height:100%;border:0}
+  /* Mappa bloccata finché il visitatore non la carica (nessun dato a Google prima del clic) */
+  .map-consent{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px 28px;text-align:center;
+    background-color:var(--vc);
+    background-image:linear-gradient(rgba(74,124,111,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(74,124,111,0.07) 1px,transparent 1px);
+    background-size:32px 32px}
+  .map-consent-ico{width:52px;height:52px;border-radius:50%;background:var(--w);display:flex;align-items:center;justify-content:center;color:var(--v);box-shadow:0 4px 16px rgba(74,124,111,0.14)}
+  .map-consent-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400;color:var(--vs);line-height:1.2}
+  .map-consent-text{font-size:0.84rem;font-weight:300;color:var(--tm);line-height:1.6;max-width:400px}
+  .map-consent-text a{color:var(--v);text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.35);transition:color .2s,border-color .2s}
+  .map-consent-text a:hover{color:var(--vs);border-color:var(--vs)}
+  .map-consent-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 28px;border:none;border-radius:100px;background:var(--v);color:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.04em;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+  .map-consent-btn:hover{background:var(--vs);transform:translateY(-1px);box-shadow:0 6px 18px rgba(44,74,67,0.22)}
+  .map-consent-btn:focus-visible{outline:3px solid var(--s);outline-offset:3px}
+  @media(max-width:767px){
+    .map-consent{gap:10px;padding:20px 18px}
+    .map-consent-ico{width:44px;height:44px}
+    .map-consent-text{font-size:0.8rem}
+  }
   .map-cta{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:11px 22px;border-radius:100px;border:1.5px solid rgba(74,124,111,0.35);background:transparent;color:var(--vs);font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.04em;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
   .map-cta:hover{background:var(--v);border-color:var(--v);color:#fff}
   @media(max-width:767px){
@@ -383,17 +399,6 @@
   .nav-mobile a{display:block;font-size:0.85rem;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;color:var(--tm);padding:13px 0;transition:color .2s}
   .nav-mobile a:hover{color:var(--v)}
   .nav-mobile .nav-pill{background:var(--v)!important;color:#fff!important;padding:12px 24px!important;border-radius:100px;text-align:center;font-size:0.78rem!important;display:block;margin-top:4px}
-  /* ── MODAL PRIVACY / COOKIE ── */
-  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(28,43,39,0.55);z-index:500;align-items:flex-start;justify-content:center;padding:80px 24px 24px;overflow-y:auto}
-  .modal-overlay.is-open{display:flex}
-  .modal-box{background:#fff;border-radius:16px;max-width:640px;width:100%;padding:40px 44px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.2)}
-  .modal-box h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:var(--vs);margin-bottom:8px}
-  .modal-box .modal-date{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--tl);margin-bottom:24px}
-  .modal-box h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--vs);margin:20px 0 6px}
-  .modal-box p{font-size:0.87rem;line-height:1.75;color:var(--tm);margin-bottom:10px}
-  .modal-close{position:absolute;top:16px;right:16px;background:none;border:1px solid rgba(74,124,111,0.15);font-size:1.1rem;cursor:pointer;color:var(--tl);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s,border-color .2s}
-  .modal-close:hover{background:var(--vc);border-color:var(--vm)}
-  @media(max-width:640px){.modal-box{padding:28px 20px}.modal-overlay{padding:72px 12px 12px}}
   /* ── FIX RESPONSIVE MOBILE ── */
   @media(max-width:480px){
     .hero-brand-name{font-size:clamp(2.6rem,11vw,3.8rem)!important}
@@ -952,16 +957,17 @@
       </div>
     </div>
     <div class="map-wrap">
-      <div class="map-box">
-        <iframe
-          src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=it&amp;q=Via%20Bertaldia%2091,%2033100%20Udine%20UD&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Mappa di ComuniCare Logopediste Udine — Via Bertaldia 91"></iframe>
+      <div class="map-box" id="map-box">
+        <!-- La mappa di Google viene caricata SOLO dopo il clic del visitatore (consenso preventivo):
+             prima del clic il browser non contatta in alcun modo i server di Google. -->
+        <div class="map-consent" id="map-consent">
+          <div class="map-consent-ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <p class="map-consent-title">Mappa di Google Maps</p>
+          <p class="map-consent-text">La mappa è un servizio di Google: se la carichi, Google riceverà alcuni dati sulla tua navigazione (come l'indirizzo IP) e potrà installare cookie. Finché non clicchi, nessun dato viene inviato. <a href="cookie-policy.html#google-maps">Cookie Policy</a></p>
+          <button type="button" class="map-consent-btn" id="map-load">Mostra la mappa</button>
+        </div>
       </div>
     </div>
   </div>
@@ -982,8 +988,8 @@
     </div>
     <div style="font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(201,169,110,0.7);font-family:'Outfit',sans-serif;">Logopedia · Udine</div>
   </div>
-  <div class="f-copy">© 2025 Logopediste Udine — P.IVA <!-- INSERIRE P.IVA --></div>
-  <div class="f-links"><a href="#" onclick="openModal('privacy-modal');return false;">Privacy Policy</a><a href="#" onclick="openModal('cookie-modal');return false;">Cookie Policy</a></div>
+  <div class="f-copy">© 2025 Logopediste Udine — <span style="white-space:nowrap">Jovana Ikač · P.IVA 03184750309</span></div>
+  <div class="f-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a></div>
 </footer>
 <script>
 (function(){
@@ -1040,44 +1046,6 @@
 })();
 </script>
 
-<!-- ── MODAL PRIVACY POLICY ── -->
-<div class="modal-overlay" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('privacy-modal')" aria-label="Chiudi">✕</button>
-    <h3 id="privacy-title">Privacy Policy</h3>
-    <p class="modal-date"><!-- INSERIRE DATA AGGIORNAMENTO --></p>
-    <p><!-- INSERIRE TESTO LEGALE COMPLETO DELLA PRIVACY POLICY CONFORME AL GDPR (Reg. UE 2016/679). Il testo di seguito è un segnaposto da sostituire con il testo redatto dal vostro consulente legale o DPO. --></p>
-    <h4>Titolare del trattamento</h4>
-    <p><!-- INSERIRE: ragione sociale, indirizzo, email del titolare del trattamento --></p>
-    <h4>Dati raccolti</h4>
-    <p>Il sito raccoglie dati di navigazione (indirizzo IP, browser, pagine visitate) tramite i server di hosting e, se attivi, eventuali cookie analitici. Non vengono raccolti dati personali senza esplicito consenso dell'interessato.</p>
-    <h4>Finalità del trattamento</h4>
-    <p>I dati sono trattati esclusivamente per finalità di gestione tecnica del sito e, previo consenso, per l'invio di comunicazioni relative ai servizi offerti.</p>
-    <h4>Conservazione e diritti dell'interessato</h4>
-    <p>I dati sono conservati per il tempo strettamente necessario alle finalità indicate. L'interessato ha diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione al trattamento, scrivendo a <!-- INSERIRE EMAIL DPO O TITOLARE -->.</p>
-    <h4>Reclami</h4>
-    <p>L'interessato può proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it).</p>
-  </div>
-</div>
-
-<!-- ── MODAL COOKIE POLICY ── -->
-<div class="modal-overlay" id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('cookie-modal')" aria-label="Chiudi">✕</button>
-    <h3 id="cookie-title">Cookie Policy</h3>
-    <p class="modal-date"><!-- INSERIRE DATA AGGIORNAMENTO --></p>
-    <p><!-- INSERIRE TESTO LEGALE COMPLETO DELLA COOKIE POLICY. Il testo di seguito è un segnaposto da sostituire con il testo redatto dal vostro consulente legale. --></p>
-    <h4>Cosa sono i cookie</h4>
-    <p>I cookie sono piccoli file di testo salvati sul dispositivo dell'utente durante la navigazione. Questo sito utilizza esclusivamente cookie tecnici necessari al corretto funzionamento delle pagine.</p>
-    <h4>Cookie tecnici (necessari)</h4>
-    <p>Sono utilizzati per garantire la navigazione e il funzionamento del sito. Non richiedono il consenso dell'utente ai sensi dell'art. 122 del Codice Privacy e delle Linee guida del Garante del 2021.</p>
-    <h4>Cookie analitici e di profilazione</h4>
-    <p><!-- SPECIFICARE: se utilizzate Google Analytics o altri strumenti di analisi, indicarli qui con le relative modalità di opt-out. Se non utilizzati, rimuovere questa sezione. --></p>
-    <h4>Gestione dei cookie</h4>
-    <p>L'utente può gestire le preferenze sui cookie attraverso le impostazioni del proprio browser. La disabilitazione dei cookie tecnici potrebbe compromettere il corretto funzionamento del sito.</p>
-  </div>
-</div>
-
 <script>
 /* ── HAMBURGER MENU ── */
 (function(){
@@ -1097,25 +1065,22 @@
     });
   });
 })();
-/* ── MODALI ── */
-function openModal(id){
-  var m = document.getElementById(id);
-  if(m){ m.classList.add('is-open'); document.body.style.overflow='hidden'; }
-}
-function closeModal(id){
-  var m = document.getElementById(id);
-  if(m){ m.classList.remove('is-open'); document.body.style.overflow=''; }
-}
-document.addEventListener('click', function(e){
-  if(e.target.classList.contains('modal-overlay')) closeModal(e.target.id);
-});
-document.addEventListener('keydown', function(e){
-  if(e.key==='Escape'){
-    document.querySelectorAll('.modal-overlay.is-open').forEach(function(m){
-      closeModal(m.id);
-    });
-  }
-});
+/* ── MAPPA: caricata solo dopo il clic del visitatore (consenso) ── */
+(function(){
+  var btn = document.getElementById('map-load');
+  var box = document.getElementById('map-box');
+  if(!btn || !box) return;
+  btn.addEventListener('click', function(){
+    var f = document.createElement('iframe');
+    f.src = 'https://maps.google.com/maps?width=100%25&height=100%25&hl=it&q=Via%20Bertaldia%2091,%2033100%20Udine%20UD&t=&z=15&ie=UTF8&iwloc=&output=embed';
+    f.title = 'Mappa di ComuniCare Logopediste Udine — Via Bertaldia 91';
+    f.setAttribute('allowfullscreen', '');
+    f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    box.innerHTML = '';
+    box.appendChild(f);
+    f.focus();
+  });
+})();
 </script>
 <script>
 (function(){

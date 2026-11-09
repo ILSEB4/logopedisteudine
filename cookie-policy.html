@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FBFAF7">
+<title>Cookie Policy – ComuniCare Udine</title>
+<meta name="description" content="Informativa sui cookie del sito di ComuniCare, logopediste a Udine: il sito non usa cookie e la mappa di Google si carica solo con il consenso del visitatore.">
+<meta name="format-detection" content="telephone=no,email=no">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root {
+    --v:#4A7C6F; --vm:#8BB5AB; --vc:#D4E8E3; --vs:#2C4A43;
+    --s:#C9A96E; --sc:#F0E6D3; --cr:#F7F3EC; --bg:#FBFAF7;
+    --t:#1C2B27; --tm:#4E6560; --tl:#8EA39E; --w:#FFFFFF;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(251,250,247,0.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(74,124,111,0.1)}
+  .nav-back{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--tm);font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;transition:color .2s;min-height:44px}
+  .nav-back:hover{color:var(--v)}
+  .nav-back::before{content:'←';font-size:1rem}
+
+  .legal{max-width:800px;margin:0 auto;padding:120px 32px 80px}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--s);margin-bottom:14px}
+  .eyebrow::before{content:'';width:18px;height:1px;background:var(--s)}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4.2vw,3rem);font-weight:400;line-height:1.1;color:var(--vs);margin-bottom:16px;letter-spacing:-0.01em}
+  h1 em{font-style:italic;color:var(--v)}
+  .legal-sub{font-size:0.95rem;font-weight:300;color:var(--tm);line-height:1.7;margin-bottom:10px;max-width:640px}
+  .legal-date{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--tl);margin-bottom:36px}
+  .summary{background:var(--vc);border-radius:16px;padding:24px 28px;margin-bottom:12px}
+  .summary-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--vs);font-weight:500;margin-bottom:12px}
+  .summary ul{list-style:none;margin:0;display:flex;flex-direction:column;gap:8px}
+  .summary li{position:relative;padding-left:22px;font-size:0.92rem;font-weight:300;color:var(--vs);line-height:1.6;margin:0}
+  .summary li::before{content:'';position:absolute;left:2px;top:0.6em;width:8px;height:8px;border-radius:50%;background:var(--v)}
+
+  .legal h2{font-family:'Playfair Display',serif;font-size:clamp(1.25rem,2.2vw,1.5rem);font-weight:400;color:var(--vs);line-height:1.25;margin:44px 0 14px;padding-top:24px;border-top:1px solid rgba(74,124,111,0.12);scroll-margin-top:84px}
+  .legal h2 .n{color:var(--s);font-style:italic;margin-right:6px}
+  .legal p{font-size:0.93rem;font-weight:300;color:var(--tm);line-height:1.75;margin-bottom:12px}
+  .legal ul{margin:0 0 14px 20px}
+  .legal li{font-size:0.93rem;font-weight:300;color:var(--tm);line-height:1.7;margin-bottom:8px}
+  .legal strong{font-weight:500;color:var(--t)}
+  .legal a{color:var(--v);text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.3);transition:color .2s,border-color .2s;overflow-wrap:anywhere}
+  .legal a:hover{color:var(--vs);border-color:var(--vs)}
+
+  .tools{display:flex;flex-direction:column;gap:1px;background:rgba(74,124,111,0.12);border-radius:12px;overflow:hidden;margin:6px 0 16px}
+  .tool{background:var(--w);padding:16px 20px;display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:start}
+  .tool-name{font-size:0.9rem;font-weight:500;color:var(--vs);line-height:1.5}
+  .pill{display:inline-block;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;padding:3px 10px;border-radius:100px;margin-bottom:6px}
+  .pill-no{background:var(--vc);color:var(--vs)}
+  .pill-ask{background:var(--sc);color:#7A5B22}
+  .legal .tool p{font-size:0.86rem;line-height:1.6;margin:0}
+
+  .note{background:var(--w);border:1px solid rgba(74,124,111,0.14);border-left:3px solid var(--v);border-radius:10px;padding:16px 20px;margin:4px 0 16px}
+  .legal .note p{font-size:0.88rem;margin-bottom:6px}
+  .legal .note p:last-child{margin-bottom:0}
+
+  footer{background:var(--vs);padding:32px 64px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid rgba(200,221,217,0.08)}
+  .f-copy{font-size:0.75rem;color:rgba(200,221,217,0.4)}
+  .f-links{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+  .f-links a{color:rgba(200,221,217,0.35);text-decoration:none;font-size:0.73rem;transition:color .2s}
+  .f-links a:hover,.f-links a[aria-current="page"]{color:var(--vm)}
+
+  .wv1{animation:wv1anim 3s ease-in-out infinite}
+  .wv2{animation:wv2anim 3s ease-in-out infinite .4s}
+  .wv3{animation:wv3anim 3s ease-in-out infinite .8s}
+  .wd1{animation:wdpulse 3s ease-in-out infinite}
+  .wd2{animation:wdpulse 3s ease-in-out infinite .4s}
+  .wd3{animation:wdpulse 3s ease-in-out infinite .8s}
+  @keyframes wv1anim{0%,100%{d:path("M 0 24 C 40 8, 80 40, 120 24 C 160 8, 200 40, 240 24")}50%{d:path("M 0 24 C 40 40, 80 8, 120 24 C 160 40, 200 8, 240 24")}}
+  @keyframes wv2anim{0%,100%{d:path("M 0 24 C 40 10, 80 38, 120 24 C 160 10, 200 38, 240 24")}50%{d:path("M 0 24 C 40 38, 80 10, 120 24 C 160 38, 200 10, 240 24")}}
+  @keyframes wv3anim{0%,100%{d:path("M 0 24 C 40 14, 80 34, 120 24 C 160 14, 200 34, 240 24")}50%{d:path("M 0 24 C 40 34, 80 14, 120 24 C 160 34, 200 14, 240 24")}}
+  @keyframes wdpulse{0%,100%{r:3;opacity:.5}50%{r:4.5;opacity:1}}
+
+  @media(max-width:960px){
+    nav{padding:0 24px}
+    footer{flex-direction:column;padding:24px;text-align:center}
+  }
+  @media(max-width:640px){
+    .legal{padding:100px 16px 56px}
+    .summary{padding:20px 18px}
+    .tool{grid-template-columns:1fr;gap:4px;padding:14px 16px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" style="display:flex;align-items:center;text-decoration:none;" aria-label="ComuniCare — torna alla home">
+    <div style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;line-height:1;">
+      <svg width="96" height="18" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;" aria-hidden="true">
+        <path class="wv1" d="M 0 24 C 40 8, 80 40, 120 24 C 160 8, 200 40, 240 24" stroke="#2C4A43" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path class="wv2" d="M 0 24 C 40 10, 80 38, 120 24 C 160 10, 200 38, 240 24" stroke="#4A7C6F" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path class="wv3" d="M 0 24 C 40 14, 80 34, 120 24 C 160 14, 200 34, 240 24" stroke="#8BB5AB" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <circle class="wd1" cx="60" cy="24" r="3" fill="#C9A96E"/>
+        <circle class="wd2" cx="120" cy="24" r="3" fill="#4A7C6F"/>
+        <circle class="wd3" cx="180" cy="24" r="3" fill="#C9A96E"/>
+      </svg>
+      <div style="font-family:'Georgia',serif;font-size:1.15rem;line-height:1;letter-spacing:-0.01em;text-align:center;">
+        <span style="color:#2C4A43;font-weight:400;">Comuni</span><span style="color:#4A7C6F;font-weight:400;font-style:italic;">Care</span>
+      </div>
+      <div style="font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:#C9A96E;font-family:'Outfit',sans-serif;text-align:center;">Logopediste · Udine</div>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back">Torna alla home</a>
+</nav>
+
+<main class="legal">
+  <div class="eyebrow">Informativa cookie</div>
+  <h1>Cookie <em>Policy</em></h1>
+  <p class="legal-sub">Informativa sull'uso di cookie e altri strumenti di tracciamento nel sito www.logopedisteudine.it, ai sensi dell'art. 122 del Codice in materia di protezione dei dati personali (D.Lgs. 196/2003) e delle Linee guida del Garante Privacy del 10 giugno 2021.</p>
+  <p class="legal-date">Ultimo aggiornamento: 9 novembre 2026</p>
+
+  <div class="summary">
+    <p class="summary-title">In breve</p>
+    <ul>
+      <li>Questo sito non installa cookie e non usa strumenti di statistica, profilazione o pubblicità.</li>
+      <li>Per questo, quando apri il sito, non trovi nessun banner cookie: non c'è nulla per cui chiederti il consenso.</li>
+      <li>L'unico contenuto esterno che può installare cookie è la mappa di Google, che resta bloccata finché non clicchi «Mostra la mappa».</li>
+    </ul>
+  </div>
+
+  <h2 id="cosa-sono"><span class="n">1.</span>Cosa sono i cookie</h2>
+  <p>I cookie sono piccoli file di testo che i siti salvano sul tuo dispositivo durante la navigazione. Esistono anche altri strumenti con funzioni simili, come la memoria locale del browser, i pixel o le «impronte» del dispositivo. Alcuni sono tecnici e servono a far funzionare il sito. Altri servono a contare le visite o a profilare chi naviga per mostrargli pubblicità: questi richiedono il tuo consenso preventivo.</p>
+
+  <h2 id="questo-sito"><span class="n">2.</span>Cookie e strumenti usati da questo sito</h2>
+  <div class="tools">
+    <div class="tool">
+      <div class="tool-name">Cookie tecnici propri</div>
+      <div><span class="pill pill-no">Nessuno</span><p>Il sito non salva informazioni sul tuo dispositivo, nemmeno nella memoria locale del browser.</p></div>
+    </div>
+    <div class="tool">
+      <div class="tool-name">Statistiche (analytics)</div>
+      <div><span class="pill pill-no">Nessuno</span><p>Non misuriamo le visite con Google Analytics o strumenti simili.</p></div>
+    </div>
+    <div class="tool">
+      <div class="tool-name">Profilazione e pubblicità</div>
+      <div><span class="pill pill-no">Nessuno</span><p>Nessun cookie o strumento di profilazione, nostro o di terze parti.</p></div>
+    </div>
+    <div class="tool">
+      <div class="tool-name">Caratteri tipografici</div>
+      <div><span class="pill pill-no">Ospitati sul sito</span><p>I font vengono caricati dal nostro stesso server: nessun collegamento a servizi esterni come Google Fonts.</p></div>
+    </div>
+    <div class="tool">
+      <div class="tool-name">Hosting (Vercel)</div>
+      <div><span class="pill pill-no">Nessun cookie</span><p>Il fornitore che ospita il sito registra solo i dati tecnici di navigazione descritti nella <a href="privacy-policy.html#dati">Privacy Policy</a>.</p></div>
+    </div>
+    <div class="tool">
+      <div class="tool-name">Mappa di Google Maps</div>
+      <div><span class="pill pill-ask">Solo con il tuo consenso</span><p>Bloccata finché non clicchi «Mostra la mappa». Vedi il punto 3.</p></div>
+    </div>
+  </div>
+
+  <h2 id="google-maps"><span class="n">3.</span>Mappa di Google Maps</h2>
+  <p>Nella sezione Contatti della home page puoi vedere la posizione dello studio su una mappa di Google Maps, servizio fornito da Google Ireland Limited (Gordon House, Barrow Street, Dublino 4, Irlanda).</p>
+  <div class="note">
+    <p><strong>Prima del clic</strong>: la mappa non viene caricata e il tuo browser non si collega in alcun modo ai server di Google.</p>
+    <p><strong>Dopo il clic su «Mostra la mappa»</strong>: il browser carica la mappa direttamente da Google.</p>
+  </div>
+  <p>Una volta caricata la mappa, Google riceve dati come il tuo indirizzo IP, informazioni sul browser e sul dispositivo e l'indirizzo della pagina. Può inoltre installare o leggere cookie e strumenti simili, anche per finalità proprie, ad esempio di profilazione se hai fatto l'accesso a un account Google. Google tratta questi dati come titolare autonomo e può trasferirli negli Stati Uniti a Google LLC, che aderisce all'EU-U.S. Data Privacy Framework.</p>
+  <p>Il clic su «Mostra la mappa» vale come consenso solo per quella visualizzazione. La scelta non viene memorizzata: alla visita successiva la mappa resterà bloccata finché non la caricherai di nuovo.</p>
+  <p><strong>Come revocare il consenso</strong>: chiudi o ricarica la pagina. Per cancellare i cookie eventualmente già installati da Google, usa le impostazioni del browser (punto 5).</p>
+  <p>Per sapere come Google usa i dati: <a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noopener">Informativa privacy di Google</a> e <a href="https://policies.google.com/technologies/cookies?hl=it" target="_blank" rel="noopener">Come Google utilizza i cookie</a>.</p>
+  <p>Puoi anche raggiungerci senza caricare la mappa: l'indirizzo è Via Bertaldia 91, 33100 Udine (UD).</p>
+
+  <h2 id="link-esterni"><span class="n">4.</span>Link verso altri siti</h2>
+  <p>Il sito contiene link a servizi esterni, che si aprono solo se li clicchi: WhatsApp (per scriverci), Google Maps (pulsante «Come raggiungerci» nelle pagine delle logopediste) e il sito della Corale Gioconda. Una volta lì valgono le informative privacy e cookie di quei siti.</p>
+
+  <h2 id="browser"><span class="n">5.</span>Come gestire i cookie dal browser</h2>
+  <p>Puoi vedere, bloccare o cancellare i cookie in qualsiasi momento dalle impostazioni del tuo browser, di solito nella sezione «Privacy» o «Cookie e dati dei siti». Bloccare i cookie non ti impedisce di usare questo sito.</p>
+
+  <h2 id="titolari"><span class="n">6.</span>Chi è responsabile dei tuoi dati</h2>
+  <p>Contitolari del trattamento sono le logopediste Jovana Ikač e Monica Salvadori Cavazzon. Recapiti e diritti sono indicati nella <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+  <h2 id="aggiornamenti"><span class="n">7.</span>Aggiornamenti</h2>
+  <p>Se in futuro aggiungeremo servizi che usano cookie non tecnici, ad esempio per le statistiche, aggiorneremo questa pagina e ti chiederemo il consenso prima di attivarli.</p>
+</main>
+
+<footer>
+  <div class="f-copy">© 2025 Logopediste Udine — <span style="white-space:nowrap">Jovana Ikač · P.IVA 03184750309</span></div>
+  <div class="f-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="cookie-policy.html" aria-current="page">Cookie Policy</a>
+    <a href="index.html">← Torna alla home</a>
+  </div>
+</footer>
+</body>
+</html>

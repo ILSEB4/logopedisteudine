@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FBFAF7">
+<title>Privacy Policy – ComuniCare Udine</title>
+<meta name="description" content="Informativa sul trattamento dei dati personali del sito di ComuniCare, logopediste a Udine (Jovana Ikač e Monica Salvadori Cavazzon).">
+<meta name="format-detection" content="telephone=no,email=no">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root {
+    --v:#4A7C6F; --vm:#8BB5AB; --vc:#D4E8E3; --vs:#2C4A43;
+    --s:#C9A96E; --sc:#F0E6D3; --cr:#F7F3EC; --bg:#FBFAF7;
+    --t:#1C2B27; --tm:#4E6560; --tl:#8EA39E; --w:#FFFFFF;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(251,250,247,0.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(74,124,111,0.1)}
+  .nav-back{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--tm);font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;transition:color .2s;min-height:44px}
+  .nav-back:hover{color:var(--v)}
+  .nav-back::before{content:'←';font-size:1rem}
+
+  .legal{max-width:800px;margin:0 auto;padding:120px 32px 80px}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--s);margin-bottom:14px}
+  .eyebrow::before{content:'';width:18px;height:1px;background:var(--s)}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4.2vw,3rem);font-weight:400;line-height:1.1;color:var(--vs);margin-bottom:16px;letter-spacing:-0.01em}
+  h1 em{font-style:italic;color:var(--v)}
+  .legal-sub{font-size:0.95rem;font-weight:300;color:var(--tm);line-height:1.7;margin-bottom:10px;max-width:640px}
+  .legal-date{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--tl);margin-bottom:36px}
+  .summary{background:var(--vc);border-radius:16px;padding:24px 28px;margin-bottom:12px}
+  .summary-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--vs);font-weight:500;margin-bottom:12px}
+  .summary ul{list-style:none;margin:0;display:flex;flex-direction:column;gap:8px}
+  .summary li{position:relative;padding-left:22px;font-size:0.92rem;font-weight:300;color:var(--vs);line-height:1.6;margin:0}
+  .summary li::before{content:'';position:absolute;left:2px;top:0.6em;width:8px;height:8px;border-radius:50%;background:var(--v)}
+
+  .legal h2{font-family:'Playfair Display',serif;font-size:clamp(1.25rem,2.2vw,1.5rem);font-weight:400;color:var(--vs);line-height:1.25;margin:44px 0 14px;padding-top:24px;border-top:1px solid rgba(74,124,111,0.12);scroll-margin-top:84px}
+  .legal h2 .n{color:var(--s);font-style:italic;margin-right:6px}
+  .legal h3{font-size:0.95rem;font-weight:500;color:var(--vs);margin:22px 0 8px}
+  .legal p{font-size:0.93rem;font-weight:300;color:var(--tm);line-height:1.75;margin-bottom:12px}
+  .legal ul{margin:0 0 14px 20px}
+  .legal li{font-size:0.93rem;font-weight:300;color:var(--tm);line-height:1.7;margin-bottom:8px}
+  .legal strong{font-weight:500;color:var(--t)}
+  .legal a{color:var(--v);text-decoration:none;border-bottom:1px solid rgba(74,124,111,0.3);transition:color .2s,border-color .2s;overflow-wrap:anywhere}
+  .legal a:hover{color:var(--vs);border-color:var(--vs)}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 18px}
+  .card{background:var(--w);border:1px solid rgba(74,124,111,0.12);border-radius:12px;padding:18px 20px}
+  .card-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--vs);margin-bottom:2px;line-height:1.3}
+  .card-role{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--s);margin-bottom:10px}
+  .legal .card p{font-size:0.86rem;line-height:1.6;margin-bottom:2px}
+
+  .basis{display:flex;flex-direction:column;gap:1px;background:rgba(74,124,111,0.12);border-radius:12px;overflow:hidden;margin:6px 0 16px}
+  .basis-row{background:var(--w);padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .basis-what{font-size:0.9rem;font-weight:500;color:var(--vs);line-height:1.5}
+  .basis-why{font-size:0.86rem;font-weight:300;color:var(--tm);line-height:1.6}
+
+  footer{background:var(--vs);padding:32px 64px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid rgba(200,221,217,0.08)}
+  .f-copy{font-size:0.75rem;color:rgba(200,221,217,0.4)}
+  .f-links{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+  .f-links a{color:rgba(200,221,217,0.35);text-decoration:none;font-size:0.73rem;transition:color .2s}
+  .f-links a:hover,.f-links a[aria-current="page"]{color:var(--vm)}
+
+  .wv1{animation:wv1anim 3s ease-in-out infinite}
+  .wv2{animation:wv2anim 3s ease-in-out infinite .4s}
+  .wv3{animation:wv3anim 3s ease-in-out infinite .8s}
+  .wd1{animation:wdpulse 3s ease-in-out infinite}
+  .wd2{animation:wdpulse 3s ease-in-out infinite .4s}
+  .wd3{animation:wdpulse 3s ease-in-out infinite .8s}
+  @keyframes wv1anim{0%,100%{d:path("M 0 24 C 40 8, 80 40, 120 24 C 160 8, 200 40, 240 24")}50%{d:path("M 0 24 C 40 40, 80 8, 120 24 C 160 40, 200 8, 240 24")}}
+  @keyframes wv2anim{0%,100%{d:path("M 0 24 C 40 10, 80 38, 120 24 C 160 10, 200 38, 240 24")}50%{d:path("M 0 24 C 40 38, 80 10, 120 24 C 160 38, 200 10, 240 24")}}
+  @keyframes wv3anim{0%,100%{d:path("M 0 24 C 40 14, 80 34, 120 24 C 160 14, 200 34, 240 24")}50%{d:path("M 0 24 C 40 34, 80 14, 120 24 C 160 34, 200 14, 240 24")}}
+  @keyframes wdpulse{0%,100%{r:3;opacity:.5}50%{r:4.5;opacity:1}}
+
+  @media(max-width:960px){
+    nav{padding:0 24px}
+    footer{flex-direction:column;padding:24px;text-align:center}
+  }
+  @media(max-width:640px){
+    .legal{padding:100px 16px 56px}
+    .summary{padding:20px 18px}
+    .cards{grid-template-columns:1fr}
+    .basis-row{grid-template-columns:1fr;gap:4px;padding:14px 16px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" style="display:flex;align-items:center;text-decoration:none;" aria-label="ComuniCare — torna alla home">
+    <div style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;line-height:1;">
+      <svg width="96" height="18" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;" aria-hidden="true">
+        <path class="wv1" d="M 0 24 C 40 8, 80 40, 120 24 C 160 8, 200 40, 240 24" stroke="#2C4A43" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path class="wv2" d="M 0 24 C 40 10, 80 38, 120 24 C 160 10, 200 38, 240 24" stroke="#4A7C6F" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path class="wv3" d="M 0 24 C 40 14, 80 34, 120 24 C 160 14, 200 34, 240 24" stroke="#8BB5AB" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <circle class="wd1" cx="60" cy="24" r="3" fill="#C9A96E"/>
+        <circle class="wd2" cx="120" cy="24" r="3" fill="#4A7C6F"/>
+        <circle class="wd3" cx="180" cy="24" r="3" fill="#C9A96E"/>
+      </svg>
+      <div style="font-family:'Georgia',serif;font-size:1.15rem;line-height:1;letter-spacing:-0.01em;text-align:center;">
+        <span style="color:#2C4A43;font-weight:400;">Comuni</span><span style="color:#4A7C6F;font-weight:400;font-style:italic;">Care</span>
+      </div>
+      <div style="font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:#C9A96E;font-family:'Outfit',sans-serif;text-align:center;">Logopediste · Udine</div>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back">Torna alla home</a>
+</nav>
+
+<main class="legal">
+  <div class="eyebrow">Informativa privacy</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="legal-sub">Informativa sul trattamento dei dati personali di chi visita il sito www.logopedisteudine.it, ai sensi degli artt. 13 e 26 del Regolamento (UE) 2016/679 («GDPR»).</p>
+  <p class="legal-date">Ultimo aggiornamento: 9 novembre 2026</p>
+
+  <div class="summary">
+    <p class="summary-title">In breve</p>
+    <ul>
+      <li>Il sito non usa cookie né strumenti di statistica, profilazione o pubblicità.</li>
+      <li>Non ci sono moduli da compilare: riceviamo solo i dati che ci mandi tu, se ci contatti per telefono, email o WhatsApp.</li>
+      <li>La mappa di Google si carica solo se lo scegli tu.</li>
+      <li>Per qualsiasi richiesta sui tuoi dati puoi scrivere a una delle due logopediste.</li>
+    </ul>
+  </div>
+
+  <h2 id="titolari"><span class="n">1.</span>Chi tratta i tuoi dati</h2>
+  <p>Il sito www.logopedisteudine.it (di seguito «il Sito») è gestito insieme dalle logopediste:</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-name">Jovana Ikač</div>
+      <div class="card-role">Logopedista</div>
+      <p>P.IVA 03184750309</p>
+      <p>Email: <a href="mailto:ikac.jovana@icloud.com">ikac.jovana@icloud.com</a></p>
+      <p>Tel. <a href="tel:+393520515665">+39 352 0515665</a></p>
+    </div>
+    <div class="card">
+      <div class="card-name">Monica Salvadori Cavazzon</div>
+      <div class="card-role">Logopedista</div>
+      <p>Email: <a href="mailto:msalvadoricavazzon@gmail.com">msalvadoricavazzon@gmail.com</a></p>
+      <p>Tel. <a href="tel:+393520919410">+39 352 0919410</a></p>
+    </div>
+  </div>
+  <p>Recapito: Via Bertaldia 91, 33100 Udine (UD), presso ASPIC.</p>
+  <p>Per i dati raccolti tramite il Sito le due professioniste sono <strong>contitolari del trattamento</strong> (art. 26 GDPR). Hanno stabilito di comune accordo i rispettivi compiti: entrambe sono punto di contatto per gli interessati, quindi puoi rivolgerti a una qualsiasi delle due e la tua richiesta verrà gestita insieme.</p>
+  <p>Quando contatti direttamente una delle due logopediste (per telefono, email o WhatsApp), i dati della tua richiesta sono trattati dalla professionista che hai contattato, come titolare autonoma.</p>
+  <p>Non è stato nominato un Responsabile della protezione dei dati (DPO), perché non è obbligatorio.</p>
+
+  <h2 id="dati"><span class="n">2.</span>Quali dati trattiamo</h2>
+  <h3>Dati di navigazione</h3>
+  <p>Durante la visita, i server che ospitano il Sito registrano automaticamente alcuni dati tecnici necessari al suo funzionamento: indirizzo IP, data e ora della richiesta, pagina visitata, tipo di browser e di dispositivo, pagina di provenienza. Questi dati non vengono usati per identificarti né per profilarti.</p>
+  <h3>Dati che ci comunichi tu</h3>
+  <p>Il Sito non contiene moduli di contatto. Se ci contatti per telefono, email o WhatsApp (anche tramite i pulsanti del Sito), trattiamo i dati che scegli di comunicarci: nome, numero di telefono, indirizzo email e contenuto del messaggio.</p>
+  <h3>Informazioni sulla salute</h3>
+  <p>Il tuo messaggio potrebbe contenere informazioni sulla salute tua o di un tuo familiare, ad esempio di tuo figlio o tua figlia. Le usiamo solo per risponderti e valutare un'eventuale presa in carico, nel rispetto del segreto professionale. Ti chiediamo di non inviare referti o informazioni cliniche dettagliate per email o WhatsApp: ne parleremo di persona. Se inizierai un percorso, riceverai l'informativa dedicata ai pazienti.</p>
+  <h3>Mappa di Google Maps</h3>
+  <p>Se scegli di caricare la mappa nella sezione Contatti, Google riceve alcuni dati sulla tua navigazione. Trovi tutti i dettagli nella <a href="cookie-policy.html#google-maps">Cookie Policy</a>.</p>
+
+  <h2 id="finalita"><span class="n">3.</span>Perché trattiamo i dati e su quale base giuridica</h2>
+  <div class="basis">
+    <div class="basis-row">
+      <div class="basis-what">Far funzionare il Sito e proteggerlo da abusi (dati di navigazione)</div>
+      <div class="basis-why">Legittimo interesse delle contitolari ad avere un sito sicuro e funzionante (art. 6, par. 1, lett. f GDPR)</div>
+    </div>
+    <div class="basis-row">
+      <div class="basis-what">Rispondere alle tue richieste e fissare un appuntamento</div>
+      <div class="basis-why">Misure precontrattuali richieste da te (art. 6, par. 1, lett. b GDPR). Per le eventuali informazioni sulla salute: finalità di diagnosi, assistenza e terapia da parte di professioniste tenute al segreto professionale (art. 9, par. 2, lett. h e par. 3 GDPR)</div>
+    </div>
+    <div class="basis-row">
+      <div class="basis-what">Mostrarti la mappa di Google Maps</div>
+      <div class="basis-why">Il tuo consenso, che dai cliccando «Mostra la mappa» (art. 6, par. 1, lett. a GDPR)</div>
+    </div>
+    <div class="basis-row">
+      <div class="basis-what">Rispettare obblighi di legge e, se necessario, difendere un diritto in giudizio</div>
+      <div class="basis-why">Obbligo di legge e legittimo interesse (art. 6, par. 1, lett. c e f GDPR)</div>
+    </div>
+  </div>
+  <p>I dati non vengono usati per marketing, non vengono venduti né diffusi e non sono oggetto di decisioni automatizzate o di profilazione.</p>
+
+  <h2 id="conferimento"><span class="n">4.</span>Sei obbligato a fornire i dati?</h2>
+  <p>I dati di navigazione sono necessari per visitare il Sito. Fornire i dati di contatto è facoltativo, ma senza di essi non possiamo risponderti.</p>
+
+  <h2 id="destinatari"><span class="n">5.</span>A chi comunichiamo i dati</h2>
+  <ul>
+    <li><strong>Vercel Inc.</strong> (Stati Uniti), che fornisce il servizio di hosting del Sito e tratta i dati di navigazione per nostro conto, come responsabile del trattamento (art. 28 GDPR).</li>
+    <li>I <strong>fornitori dei servizi di posta elettronica, telefonia e messaggistica</strong> che usiamo per risponderti (ad esempio Apple iCloud Mail, Gmail di Google, WhatsApp).</li>
+    <li><strong>Google</strong>, solo se carichi la mappa: in questo caso Google tratta i dati come titolare autonomo (vedi la <a href="cookie-policy.html#google-maps">Cookie Policy</a>).</li>
+    <li><strong>Autorità pubbliche</strong>, solo nei casi previsti dalla legge.</li>
+  </ul>
+
+  <h2 id="trasferimenti"><span class="n">6.</span>Trasferimento dei dati fuori dall'Unione Europea</h2>
+  <p>Vercel Inc. e Google LLC hanno sede negli Stati Uniti e aderiscono all'EU-U.S. Data Privacy Framework, che la Commissione europea ha riconosciuto adeguato con la decisione del 10 luglio 2023 (art. 45 GDPR). Anche i fornitori di posta e messaggistica possono trattare dati fuori dall'Unione Europea, con le garanzie previste dagli artt. 44-49 GDPR.</p>
+
+  <h2 id="conservazione"><span class="n">7.</span>Per quanto tempo conserviamo i dati</h2>
+  <ul>
+    <li><strong>Dati di navigazione</strong>: per il tempo strettamente necessario al funzionamento e alla sicurezza del Sito, secondo i tempi tecnici del fornitore di hosting, salvo che servano per accertare eventuali illeciti.</li>
+    <li><strong>Richieste di contatto</strong>: per il tempo necessario a risponderti e a organizzare l'eventuale appuntamento. Se inizi un percorso, i dati entrano nella documentazione professionale, conservata per i tempi previsti dalla legge.</li>
+    <li><strong>Dati raccolti da Google tramite la mappa</strong>: secondo i tempi stabiliti da Google (vedi la <a href="cookie-policy.html#google-maps">Cookie Policy</a>).</li>
+  </ul>
+
+  <h2 id="diritti"><span class="n">8.</span>I tuoi diritti</h2>
+  <p>In qualsiasi momento puoi chiedere di:</p>
+  <ul>
+    <li>accedere ai tuoi dati e riceverne una copia (art. 15 GDPR);</li>
+    <li>correggerli o completarli (art. 16);</li>
+    <li>cancellarli (art. 17);</li>
+    <li>limitarne il trattamento (art. 18);</li>
+    <li>riceverli in un formato di uso comune o farli trasmettere ad altri (art. 20);</li>
+    <li>opporti ai trattamenti basati sul legittimo interesse (art. 21);</li>
+    <li>revocare il consenso che hai dato, senza che questo renda illecito quanto fatto prima della revoca (art. 7, par. 3).</li>
+  </ul>
+  <p>Per esercitare i tuoi diritti scrivi a una delle due contitolari ai recapiti indicati al punto 1: ti risponderemo entro un mese (art. 12 GDPR).</p>
+  <p>Se ritieni che il trattamento dei tuoi dati violi il GDPR, puoi proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>) oppure rivolgerti all'autorità giudiziaria (artt. 77-79 GDPR).</p>
+
+  <h2 id="minori"><span class="n">9.</span>Minori</h2>
+  <p>Il Sito si rivolge anche alle famiglie di bambini e ragazzi. Le richieste che riguardano un minore devono essere inviate da chi esercita la responsabilità genitoriale.</p>
+
+  <h2 id="cookie"><span class="n">10.</span>Cookie</h2>
+  <p>Il Sito non usa cookie. Tutti i dettagli, compresi quelli sulla mappa di Google, sono nella <a href="cookie-policy.html">Cookie Policy</a>.</p>
+
+  <h2 id="modifiche"><span class="n">11.</span>Modifiche a questa informativa</h2>
+  <p>Questa informativa può essere aggiornata, ad esempio se cambiano il Sito o la normativa. La data dell'ultimo aggiornamento è indicata in alto.</p>
+</main>
+
+<footer>
+  <div class="f-copy">© 2025 Logopediste Udine — <span style="white-space:nowrap">Jovana Ikač · P.IVA 03184750309</span></div>
+  <div class="f-links">
+    <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
+    <a href="cookie-policy.html">Cookie Policy</a>
+    <a href="index.html">← Torna alla home</a>
+  </div>
+</footer>
+</body>
+</html>
